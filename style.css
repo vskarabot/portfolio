@@ -122,6 +122,7 @@ helpers that reduce duplication
 
 .full-width {
     width: 100%;
+    gap: 1vh;
 }
 
 .current-project-container {
@@ -129,7 +130,7 @@ helpers that reduce duplication
 }
 
 .chip-row-par {
-    width: 30vw;
+    width: 60vw;
     align-self: center;
     overflow: hidden;
     mask: linear-gradient(to right, transparent, #ffffff 50%, transparent);
@@ -444,6 +445,10 @@ helpers that reduce duplication
 
     .button-row {
         font-size: 2vmin;
+    }
+
+    .chip-row-par {
+        width: 30vw;
     }
 
 }
