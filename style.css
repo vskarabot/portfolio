@@ -1,0 +1,449 @@
+/*
+basic setup
+*/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    scroll-behavior: smooth;
+    font-family: 'Roboto Slab', serif;
+}
+
+a {
+    text-decoration: none;
+}
+/*
+helpers that reduce duplication
+*/
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.dark-background {
+    /*background-color: #000;*/
+    background-image: radial-gradient(circle at top left, black 60%, #505050);
+    box-shadow: 5px 15px 20px #505050;
+}
+
+.black-background {
+    background-color: black;
+}
+
+.separator-1 {
+    width: 80%;
+    border-bottom: .2vmin solid #fff;
+    mask: linear-gradient(to left, transparent, black, transparent);
+}
+
+.separator-2 {
+    width: 100%;
+}
+
+.separator-vertical {
+    height: 80%;
+    border-left: .2vmin solid #fff;
+    margin: 5px;
+    mask: linear-gradient(to bottom, transparent, black, transparent);
+}
+
+
+
+.percentage-line {
+    position: fixed;
+    width: 100%;
+    height: 1vh;
+    z-index: 1000;
+    top: 0;
+    background-color: white;
+    mask: linear-gradient(to left, transparent, black, transparent);
+
+    scale: 0 1;
+    animation: an linear;
+    animation-timeline: scroll();
+}
+
+@keyframes an {
+    to {
+        scale: 1 1;
+    }
+}
+
+
+
+
+.info-con {
+    height: 50%;
+    display: flex;
+    gap: 20px;
+
+    justify-content: space-around;
+}
+
+.column-mobile, .project-area {
+    flex-direction: column;
+}
+
+.image-con img {
+    max-width: 100%;
+    max-height: 60vh;
+}
+
+.separator-vertical {
+    display: none;
+}
+
+.image-con {
+    gap: 10px;
+}
+
+.info-text-container {
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom right, black, transparent 50%, black);
+}
+
+.full-height {
+    height: fit-content;
+}
+
+.project-area {
+    gap: 50px;
+
+    padding: 10vh;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.current-project-container {
+    display: none;
+}
+
+.chip-row-par {
+    width: 30vw;
+    align-self: center;
+    overflow: hidden;
+    mask: linear-gradient(to right, transparent, #ffffff 50%, transparent);
+}
+
+.chip-row {
+    gap: 1vw;
+    width: max-content;
+    animation: animate-chips 5s linear infinite;
+}
+
+.chip {
+    height: 3vh;
+    padding: 1vmin;
+    border-radius: 10px;
+
+    border: 1px solid magenta;
+}
+
+.chip-light {
+    background-color: white;
+}
+
+@keyframes animate-chips {
+    to {
+        transform: translate(calc(-50% - .5vw));
+    }
+}
+
+
+.normal-text {
+    color: #c0c0c0;
+    font-size: 2vmax;
+}
+
+.bigger-text {
+    color: #fff;
+    font-size: 3vmax;
+}
+
+.big-text {
+    color: #fff;
+    font-size: 4vmax;
+}
+
+.presentation-text {
+    width: 90%;
+    text-align: center;
+}
+
+.about-me-text {
+    text-align: justify;
+    width: 95%;
+}
+
+.click-here {
+    flex: .2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #98ffff;
+    animation: click-here-animation 1s linear alternate infinite;
+    font-size: 2vmax;
+}
+
+@keyframes click-here-animation {
+    to {
+        opacity: .1;
+    }
+}
+
+.click-here:hover {
+    cursor: pointer;
+    animation: none;
+}
+
+.opacity-animation {
+    animation: scroll-info linear;
+    animation-timeline: view();
+    animation-range: exit;
+}
+
+@keyframes scroll-info {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    font-size: 2vmax;
+}
+
+.text-gap {
+    gap: 1rem;
+}
+
+.a-icon {
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    
+    padding: 1vh;
+}
+
+.button-line {
+    width: 0%;
+    height: 1px;
+    background-color: #000;
+
+    transition: 0.5s linear;
+}
+
+.button-line {
+    mask: linear-gradient(to right, transparent, black, transparent);
+}
+
+.transition-line:hover .button-line {
+    width: 100%;
+}
+
+
+.pc-a {
+    width: 2vw;
+    height: 1vw;
+    background-color: white;
+}
+
+.pc-b {
+    width: 10vw;
+    height: 1vw;
+    background-color: white;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.pc {
+    border: 1vw solid white;
+    border-radius: 5px;
+}
+
+.phone {
+    border: 2px solid #c0c0c0;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-menu {
+    height: 10%;
+    background: #a0a0a0;
+    padding: 2px 0 2px 0;
+}
+
+.phone-camera {
+    width: 5px;
+    height: 5px;
+    background-color: #303030;
+    border-radius: 50%;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .info-con {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        gap: 4vh;
+    }
+    
+    .image-con {
+        margin: 5vh;
+        flex: 1;
+    }
+    .image-con .phone {
+        max-width: 100%;
+    }
+
+    .column-mobile, .project-area {
+        flex-direction: row;
+    }
+
+    .separator-vertical {
+        display: block;
+    }
+
+    .full-height {
+        height: 100vh;
+    }
+
+    .project-area {
+        width: 95%;
+        height: 95%;
+    
+        border-radius: 20px;
+    
+        gap: 20px;
+        padding: 0;
+    }
+
+    .full-width {
+        width: 100%;
+
+        animation: width-animation linear;
+        animation-timeline: view();
+        animation-range: exit;
+    }
+
+    @keyframes width-animation {
+        to {
+            width: 95%;
+            border-radius: 20px;
+        }
+    }
+
+    .current-project-container {
+        display: flex;
+
+        flex-direction: column;
+    
+        height: 100%;
+        width: 2vw;
+    
+        position: fixed;
+        right: 0;
+        z-index: 10000;
+    
+        padding: 5px;
+    
+        transition: .5s ease;
+    
+    }
+    
+    .current-project-container:hover {
+        width: 6vw;
+        background-color: black;
+        border-left: 1px solid white;
+    }
+    
+    .current-project-container:hover .circle {
+        border-color: white;
+    }
+    
+    .current-project-container:hover .line {
+        background-color: white;
+    }
+    
+    .circle {
+        width: 10px;
+        height: 10px;
+        border: 2px solid black;
+        border-radius: 50%;
+        transition: background-color 1s ease;
+    }
+    
+    .circle:hover {
+        scale: 1.1 1.1;
+        cursor: pointer;
+    }
+    
+    .current-project-container:hover .circle-active {
+        background-color: #fff;
+    }
+    
+    .circle-active {
+        background-color: black;
+        transition: background-color 1s ease;
+    }
+    
+    .line {
+        height: 10px;
+        width: 1px;
+        background-color: black;
+    }
+    
+    .home-menu {
+        color: transparent;
+        text-decoration: none;
+    }
+    
+    .current-project-container:hover .home-menu {
+        color: white;
+    }
+
+    .normal-text {
+        font-size: 2vmin;
+    }
+    
+    .bigger-text {
+        font-size: 3vmin;
+    }
+    
+    .big-text {
+        font-size: 4vmin;
+    }
+
+    .click-here {
+        font-size: 2vmin;
+    }
+
+    .button-row {
+        font-size: 2vmin;
+    }
+
+}
