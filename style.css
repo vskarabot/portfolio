@@ -14,10 +14,10 @@ html, body {
 a {
     text-decoration: none;
 }
-/*
-helpers that reduce duplication
-*/
 
+/*
+reusable classes
+*/
 .flex-center {
     display: flex;
     align-items: center;
@@ -28,24 +28,19 @@ helpers that reduce duplication
     flex-direction: column;
 }
 
+.orientation {
+    flex-direction: column;
+}
+
 .dark-background {
-    /*background-color: #000;*/
     background-image: radial-gradient(circle at top left, black 60%, #505050);
     box-shadow: 5px 15px 20px #505050;
 }
 
-.black-background {
-    background-color: black;
-}
-
-.separator-1 {
+.separator-horizontal {
     width: 80%;
     border-bottom: .2vmin solid #fff;
     mask: linear-gradient(to left, transparent, black, transparent);
-}
-
-.separator-2 {
-    width: 100%;
 }
 
 .separator-vertical {
@@ -53,11 +48,13 @@ helpers that reduce duplication
     border-left: .2vmin solid #fff;
     margin: 5px;
     mask: linear-gradient(to bottom, transparent, black, transparent);
+
+    display: none;
 }
 
 
-
-.percentage-line {
+/* other classes */
+.scroll-percentage-line {
     position: fixed;
     width: 100%;
     height: 1vh;
@@ -67,20 +64,22 @@ helpers that reduce duplication
     mask: linear-gradient(to left, transparent, black, transparent);
 
     scale: 0 1;
-    animation: an linear;
+    animation: scroll-line-width linear;
     animation-timeline: scroll();
 }
 
-@keyframes an {
+@keyframes scroll-line-width {
     to {
         scale: 1 1;
     }
 }
 
+.about-me {
+    background-color: black;
+    height: 100vh;
+}
 
-
-
-.info-con {
+.project-info {
     height: 50%;
     width: 100%;
     display: flex;
@@ -89,30 +88,18 @@ helpers that reduce duplication
     justify-content: space-around;
 }
 
-.column-mobile, .project-area {
-    flex-direction: column;
+.project-image {
+    gap: 10px;
 }
 
-.image-con img {
+.project-image img {
     max-width: 100%;
     max-height: 60vh;
-}
-
-.separator-vertical {
-    display: none;
-}
-
-.image-con {
-    gap: 10px;
 }
 
 .info-text-container {
     border-radius: 20px;
     background-image: linear-gradient(to bottom right, black, transparent 50%, black);
-}
-
-.full-height {
-    height: fit-content;
 }
 
 .project-area {
@@ -121,11 +108,6 @@ helpers that reduce duplication
     overflow: hidden;
 
     padding: 10vh;
-}
-
-.full-width {
-    width: 100%;
-    gap: 1vh;
 }
 
 .current-project-container {
@@ -168,7 +150,7 @@ helpers that reduce duplication
     }
 }
 
-
+/* font-settings */
 .normal-text {
     color: #c0c0c0;
     font-size: 2vmax;
@@ -195,13 +177,15 @@ helpers that reduce duplication
 }
 
 .click-here {
-    flex: .2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #98ffff;
-    animation: click-here-animation 1s linear alternate infinite;
+    background-image: linear-gradient(to left, black, white);
+    animation: click-here-animation 2s linear alternate infinite;
     font-size: 2vmax;
+}
+
+.click-here p {
+    background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(to right, black, magenta);
 }
 
 @keyframes click-here-animation {
@@ -256,19 +240,16 @@ helpers that reduce duplication
 .button-line {
     width: 0%;
     height: 1px;
-    background-color: #000;
+    background-color: black;
 
     transition: 0.5s linear;
+
+    box-shadow: 1px 1px 1px red;
 }
 
-.button-line {
-    mask: linear-gradient(to right, transparent, black, transparent);
+.animated-button:hover .button-line {
+    width: 90%;
 }
-
-.transition-line:hover .button-line {
-    width: 100%;
-}
-
 
 .pc-a {
     width: 2vw;
@@ -314,22 +295,22 @@ helpers that reduce duplication
 
 
 @media screen and (min-width: 768px) {
-    .info-con {
+    .project-info {
         width: 50%;
         display: flex;
         justify-content: center;
         gap: 4vh;
     }
     
-    .image-con {
+    .project-image {
         margin: 5vh;
         flex: 1;
     }
-    .image-con .phone {
+    .project-image .phone {
         max-width: 100%;
     }
 
-    .column-mobile, .project-area {
+    .orientation {
         flex-direction: row;
     }
 
@@ -351,7 +332,7 @@ helpers that reduce duplication
         padding: 0;
     }
 
-    .full-width {
+    .width-animation {
         width: 100%;
 
         animation: width-animation linear;
