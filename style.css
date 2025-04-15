@@ -154,6 +154,7 @@ helpers that reduce duplication
 
 .chip-light {
     background-color: white;
+    border-radius: 50%;
 }
 
 @keyframes animate-chips {
