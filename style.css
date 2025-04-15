@@ -82,6 +82,7 @@ helpers that reduce duplication
 
 .info-con {
     height: 50%;
+    width: 100%;
     display: flex;
     gap: 20px;
 
@@ -116,6 +117,8 @@ helpers that reduce duplication
 
 .project-area {
     gap: 50px;
+    min-width: 0;
+    overflow: hidden;
 
     padding: 10vh;
 }
@@ -130,24 +133,21 @@ helpers that reduce duplication
 }
 
 .chip-row-par {
-    width: 60vw;
     align-self: center;
+    width: 100%;
+    height: 5vmin;
     overflow: hidden;
-    mask: linear-gradient(to right, transparent, #ffffff 50%, transparent);
+
+    mask: linear-gradient(to right, transparent, black, transparent)
 }
 
 .chip-row {
-    gap: 1vw;
-    width: max-content;
+    width: fit-content; height: 100%;
     animation: animate-chips 5s linear infinite;
 }
 
 .chip {
-    height: 3vh;
-    padding: 1vmin;
-    border-radius: 10px;
-
-    border: 1px solid magenta;
+    height: 100%;
 }
 
 .chip-light {
@@ -156,7 +156,7 @@ helpers that reduce duplication
 
 @keyframes animate-chips {
     to {
-        transform: translate(calc(-50% - .5vw));
+        transform: translate(-50%);
     }
 }
 
@@ -307,7 +307,7 @@ helpers that reduce duplication
 
 @media screen and (min-width: 768px) {
     .info-con {
-        flex: 1;
+        width: 50%;
         display: flex;
         justify-content: center;
         gap: 4vh;
@@ -448,7 +448,6 @@ helpers that reduce duplication
     }
 
     .chip-row-par {
-        width: 30vw;
+        width: 50%;
     }
-
 }
