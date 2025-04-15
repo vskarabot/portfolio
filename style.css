@@ -132,6 +132,11 @@ helpers that reduce duplication
     display: none;
 }
 
+.chip-row-no-animation {
+    height: 5vmin;
+    gap: 1vmax;
+}
+
 .chip-row-par {
     align-self: center;
     width: 100%;
