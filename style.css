@@ -105,7 +105,7 @@ reusable classes
 .project-area {
     gap: 50px;
     min-width: 0;
-    overflow: hidden;
+    overflow-x: clip;
 
     padding: 10vh;
 }
@@ -177,38 +177,34 @@ reusable classes
 }
 
 .click-here {
-    background-image: linear-gradient(to left, black, white);
-    animation: click-here-animation 2s linear alternate infinite;
+    background-image: linear-gradient(to right, white, black 90%);
+    animation: click-here-animation 2s ease-in alternate infinite;
     font-size: 2vmax;
-}
-
-.click-here p {
-    background-clip: text;
-    color: transparent;
-    background-image: linear-gradient(to right, black, magenta);
+    color: black;
 }
 
 @keyframes click-here-animation {
     to {
-        opacity: .1;
+        opacity: .8;
+        color: cyan;
     }
 }
 
 .click-here:hover {
+    color: cyan;
     cursor: pointer;
     animation: none;
 }
 
 .opacity-animation {
+    opacity: 1;
+
     animation: scroll-info linear;
     animation-timeline: view();
     animation-range: exit;
 }
 
 @keyframes scroll-info {
-    from {
-        opacity: 1;
-    }
     to {
         opacity: 0;
     }
@@ -225,30 +221,47 @@ reusable classes
     gap: 1rem;
 }
 
+
 .a-icon {
-    border-radius: 5px;
-    background-color: #fff;
+    border-radius: 1px;
+    background-image: linear-gradient(to bottom right, white, #505050);
     color: #000;
 
     display: flex;
     justify-items: center;
     align-items: center;
-    
-    padding: 1vh;
+    padding: 1vmin;
+
+    transition: 1s ease-in;
 }
 
 .button-line {
     width: 0%;
     height: 1px;
-    background-color: black;
 
-    transition: 0.5s linear;
+    transition: 1s ease-out;
 
-    box-shadow: 1px 1px 1px red;
+    box-shadow: 0px 1px 1px #505050;
+}
+
+.button-line-top {
+    align-self: flex-start;
+    background-image: linear-gradient(to right, white, black);
+    mask: linear-gradient(to right, transparent, black);
+}
+
+.button-line-bottom {
+    align-self: flex-end;
+    background-image: linear-gradient(to right, black, white);
+    mask: linear-gradient(to left, transparent, black);
 }
 
 .animated-button:hover .button-line {
-    width: 90%;
+    width: 100%;
+}
+
+.animated-button:hover {
+    background: rgb(0, 255, 255);
 }
 
 .pc-a {
