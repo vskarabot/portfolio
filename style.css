@@ -84,12 +84,14 @@ reusable classes
 }
 
 .about-me-height {
-    height: 100vh;
+    height: 100dvh;
 }
 
 .about-me {
     background-color: black;
     height: 100%;
+
+    padding: 1vmax;
 }
 
 .project-info {
