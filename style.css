@@ -6,6 +6,14 @@ basic setup
     padding: 0;
 }
 
+html {
+    scroll-snap-type: y mandatory;
+}
+
+article {
+    scroll-snap-align: start;
+}
+
 html, body {
     scroll-behavior: smooth;
     font-family: 'Roboto Slab', serif;
@@ -74,9 +82,13 @@ reusable classes
     }
 }
 
+.about-me-height {
+    height: 100vh;
+}
+
 .about-me {
     background-color: black;
-    height: 100vh;
+    height: 100%;
 }
 
 .project-info {
