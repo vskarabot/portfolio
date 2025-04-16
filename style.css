@@ -6,15 +6,6 @@ basic setup
     padding: 0;
 }
 
-html {
-    scroll-snap-type: y mandatory;
-}
-
-article {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-}
-
 html, body {
     scroll-behavior: smooth;
     font-family: 'Roboto Slab', serif;
@@ -90,13 +81,11 @@ reusable classes
 .about-me {
     background-color: black;
     height: 100%;
-
-    padding: 1vmax;
 }
 
 .project-info {
     height: 50%;
-    width: 100%;
+    width: 90%;
     display: flex;
     gap: 20px;
 
@@ -323,6 +312,15 @@ reusable classes
 
 
 @media screen and (min-width: 768px) {
+    html {
+        scroll-snap-type: y mandatory;
+    }
+    
+    article {
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
     .project-info {
         width: 50%;
         display: flex;
