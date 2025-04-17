@@ -75,7 +75,7 @@ reusable classes
 }
 
 .about-me-height {
-    height: 100dvh;
+    height: 100svh;
 }
 
 .about-me {
@@ -84,9 +84,9 @@ reusable classes
 }
 
 .project-info {
+    display: flex;
     height: 50%;
     width: 90%;
-    display: flex;
     gap: 20px;
 
     justify-content: space-around;
