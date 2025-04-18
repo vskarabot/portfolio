@@ -14,5 +14,4 @@ Check it out here: [https://vskarabot.github.io/portfolio/]
 
 - Responsive design for all screen sizes
 - Animated transitions
-- Project showcase with links
-- Contact form / LinkedIn / GitHub integration
+- Project showcase with moving images
