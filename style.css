@@ -289,7 +289,7 @@ reusable classes
 
 
 #about {
-    background-color: black;
+    background-image: linear-gradient(black, #303030);
     
     flex-direction: column;
 
@@ -297,24 +297,24 @@ reusable classes
 }
 
 .about-me-top {
-
 }
 
 .grid {
-    width: 50%;
+    width: 60%;
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .grid-col-span-3 {
-    grid-column: span 3;
+    grid-column: span 2;
 }
 
 .grid-block {
+    padding: 1vmin;
     height: 200px;
-    border: 1px solid #ff0033;
     border-radius: 10px;
+    border: 1px solid white;
 }
 
 
