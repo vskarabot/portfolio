@@ -23,39 +23,37 @@
         <a href="#" class="home-menu">Home</a>
     </div>
 
-    <article class="flex-center about-me-height" >
-        <div class="about-me flex-center orientation width-animation">
-            <div class="project-image flex-center opacity-animation">
-                <img src="assets/images/person.jpg" alt="me">
-            </div>
-            <div class="project-info column opacity-animation">
-                <div >
-                    <p class="normal-text"><i>Developer</i></p>
-                    <p class="big-text">Vasja Škarabot</p>
-                </div>
-                <p class="normal-text about-me-text">
-                    My name is Vasja Škarabot and I'm a web developer.
-                    On this page you'll find some of my previous projects.
-                    Projects are mostly based on my hobbies and interests apart from programming.
+    <article class="dark-circular-background full-height flex-center column" style="position: relative;">
+        <p class="big-text">Vasja Škarabot</p>
+        <p class="normal-text"><i>Developer</i></p>
+
+        <a href="#about" style="position: absolute; bottom: 10%; width: 20%;" class="click-here flex-center column">
+            <p>Learn more</p>
+            <div class="click-here-arrow"></div>
+        </a>
+    </article>
+
+    <!-- dont forget width-animation -->
+    <article id="about" class="flex-center">
+        <div class="grid">
+            <div class="about-me-top grid-col-span-3">
+                <p class="big-text">About me</p>
+                <p class="normal-text">
+                    Maecenas tempor tristique eros a egestas. Nullam eget lacus sit amet diam luctus pharetra. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras vestibulum ante nec lorem pellentesque, eu feugiat mi aliquet. Pellentesque nec erat tincidunt, pulvinar metus ut, faucibus lorem. Vestibulum ac lacus nunc. Proin dictum dolor eu pellentesque sodales. Proin consectetur et nibh a scelerisque. Nullam quis auctor dolor. Proin auctor risus tortor.
                 </p>
-                <div class="button-row">
-                    <a class="a-icon column animated-button" href="https://github.com/vskarabot?tab=repositories" target="_blank">
-                        <div class="button-line button-line-top"></div>
-                        <div class="flex-center" style="gap: .5vmin">
-                            <span style="background-image: url('assets/icons/github.png'); height: 16px; width: 16px;"></span>
-                            <p>GitHub</p>
-                        </div>
-                        <div class="button-line button-line-bottom"></div>
-                    </a>
-                </div>
-                <a href="#project-1">
-                    <div class="click-here flex-center">
-                        <p>Click here to see some of my work below</p>
-                    </div>
-                </a>
+            </div>
+            <div class="grid-block">
+                <p class="normal-text">1</p>
+            </div>
+            <div class="grid-block">
+                <p class="normal-text">2</p>
+            </div>
+            <div class="grid-block">
+                <p class="normal-text">3</p>
             </div>
         </div>
     </article>
+
 
     <article id="project-1" class="full-height flex-center">
         <div class="project-area flex-center dark-background orientation">

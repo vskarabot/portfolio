@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const projectList = document.querySelectorAll('article');
+    const projectList = document.querySelectorAll('article:not(#about)');
     const dotMenu = document.getElementById('dot-menu');
 
     for (let i = 1; i < projectList.length; i++) {
