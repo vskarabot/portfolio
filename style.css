@@ -50,15 +50,6 @@ reusable classes
     mask: linear-gradient(to left, transparent, black, transparent);
 }
 
-.separator-vertical {
-    height: 80%;
-    border-left: .2vmin solid #fff;
-    margin: 5px;
-    mask: linear-gradient(to bottom, transparent, black, transparent);
-
-    display: none;
-}
-
 
 /* other classes */
 .scroll-percentage-line {
@@ -174,7 +165,7 @@ reusable classes
 }
 
 .click-here {
-    animation: click-here-animation 2s ease-in alternate infinite;
+    animation: click-here-animation .5s ease-in alternate infinite;
     font-size: 2vmax;
     color: white;
     padding: 1vmin;
@@ -294,6 +285,26 @@ reusable classes
     flex-direction: column;
 
     height: 100vh;
+
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.width-animation {
+    background-color: red;
+    animation: linear awa;
+    animation-timeline: view();
+    animation-range: exit;
+}
+
+@keyframes awa {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 95%;
+        border-radius: 20px;
+    }
 }
 
 .about-me-top {
@@ -339,10 +350,6 @@ reusable classes
         flex-direction: row;
     }
 
-    .separator-vertical {
-        display: block;
-    }
-
     .full-height {
         height: 100vh;
     }
@@ -355,21 +362,6 @@ reusable classes
     
         gap: 20px;
         padding: 0;
-    }
-
-    .width-animation {
-        width: 100%;
-
-        animation: width-animation linear;
-        animation-timeline: view();
-        animation-range: exit;
-    }
-
-    @keyframes width-animation {
-        to {
-            width: 95%;
-            border-radius: 20px;
-        }
     }
 
     .current-project-container {
