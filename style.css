@@ -1,5 +1,5 @@
 /*
-basic setup
+setup
 */
 * {
     margin: 0;
@@ -9,6 +9,7 @@ basic setup
 html, body {
     scroll-behavior: smooth;
     font-family: 'Roboto Slab', serif;
+    color: white;
 }
 
 a {
@@ -28,241 +29,139 @@ reusable classes
     flex-direction: column;
 }
 
-.orientation {
-    flex-direction: column;
-}
-
 .dark-background {
-    background-image: radial-gradient(circle at top left, black 60%, #505050);
+    background: black;
     box-shadow: 5px 15px 20px #505050;
 }
 
 .dark-circular-background {
-    height: 100vh;
     background-color: black;
     background-image: 
         radial-gradient(circle at 80% 20%, #ff003340, transparent 50%),
         radial-gradient(circle at 40% 60%, #00ff0020, transparent 40%);
 }
 
-.separator-horizontal {
-    width: 100%;
-    border-bottom: solid #fff;
-    border-bottom-width: 1px;
-    mask: linear-gradient(to left, transparent, black, transparent);
+.height-100 {
+    min-height: 100vh;
 }
 
+/* fonts */
+.my-name-text {
+    font-size: clamp(1.5rem, 5vmin, 5rem);
+}
 
-/* other classes */
-.scroll-percentage-line {
+.title-text {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.description-text {
+    font-size: clamp(.9rem, 2vw, 1rem);
+}
+
+.project-title-text {
+    color: black;
+    font-size: clamp(1.5rem, 3vw, 4rem);
+}
+
+.project-type-text {
+    color: #505050;
+    font-size: clamp(1rem, 1.2vw, 1.5rem);
+}
+
+/**/
+
+
+.scroll-progress-bar {
     position: fixed;
     width: 100%;
-    height: 1vh;
+    height: .5rem;
     z-index: 1000;
     top: 0;
     background-color: white;
     mask: linear-gradient(to left, transparent, black, transparent);
 
     scale: 0 1;
-    animation: scroll-line-width linear;
+    animation: scroll-progress-animation linear;
     animation-timeline: scroll();
 }
 
-@keyframes scroll-line-width {
+@keyframes scroll-progress-animation {
     to {
         scale: 1 1;
     }
 }
 
-.project-info {
-    display: flex;
-    height: 50%;
-    width: 90%;
-    gap: 20px;
+.jump-to {
+    font-size: 1rem;
 
-    justify-content: space-around;
-}
-
-.project-image {
-    gap: 10px;
-}
-
-.project-image img {
-    max-width: 100%;
-    max-height: 60vh;
-}
-
-.info-text-container {
-    border-radius: 20px;
-    background-image: linear-gradient(to bottom right, black, transparent 50%, black);
-}
-
-.project-area {
-    gap: 50px;
-    min-width: 0;
-    overflow-x: clip;
-
-    padding: 4vmax;
-}
-
-.current-project-container {
-    display: none;
-}
-
-.chip-row-no-animation {
-    height: 5vmin;
-    gap: 1vmax;
-}
-
-.chip-row-par {
-    align-self: center;
-    width: 100%;
-    height: 4vmin;
-    overflow: hidden;
-
-    mask: linear-gradient(to right, transparent, black, transparent)
-}
-
-.chip-row {
-    width: fit-content; height: 100%;
-    animation: animate-chips 5s linear infinite;
-
-    gap: 1vmax;
-}
-
-.chip {
-    height: 100%;
-}
-
-.chip-light {
-    background-color: white;
-    border-radius: 50%;
-}
-
-@keyframes animate-chips {
-    to {
-        transform: translate(calc(-50% - .5vmax));
-    }
-}
-
-/* font-settings */
-.normal-text {
-    color: #c0c0c0;
-    font-size: 2vmax;
-}
-
-.bigger-text {
-    color: #fff;
-    font-size: 2vmax;
-}
-
-.big-text {
+    animation: jump-to-blink .5s ease-in alternate infinite;
     color: white;
-    font-size: 4vmax;
 }
 
-.presentation-text {
-    width: 90%;
-    text-align: center;
+.jump-to:hover {
+    cursor: pointer;
+    animation: none;
 }
 
-.click-here {
-    position: absolute; 
-    bottom: 1rem; 
-    min-width: max-content;
-
-    animation: click-here-animation .5s ease-in alternate infinite;
-    font-size: 2vmax;
-    color: white;
-    padding: 1vmin;
-}
-
-.click-here-arrow {
-    width: 10px;
-    height: 10px;
-    border-right: 1px solid white;
-    border-bottom: 1px solid white;
+.jump-to-arrow {
+    margin-bottom: .4rem;
+    width: .5rem;
+    height: .5rem;
+    border-right: .1rem solid white;
+    border-bottom: .1rem solid white;
     transform: rotate(45deg);
 }
 
 
-@keyframes click-here-animation {
+@keyframes jump-to-blink {
     to {
         opacity: .8;
         color: #505050;
     }
 }
 
-.click-here:hover {
-    cursor: pointer;
-    animation: none;
-}
+/**/
 
-.opacity-animation {
-    opacity: 1;
-
-    animation: scroll-info linear;
-    animation-timeline: view();
-    animation-range: exit;
-}
-
-@keyframes scroll-info {
-    to {
-        opacity: 0;
-    }
-}
-
-.button-row {
+.project-container {
     display: flex;
-    justify-content: center;
-    gap: 1vw;
-    font-size: 2vmax;
+    width: 90%;
+    min-height: 70vh;
 }
 
-.text-gap {
-    gap: 1rem;
-}
-
-
-.a-icon {
-    border-radius: 1px;
-    border: 1px solid white;
-    background-image: linear-gradient(to bottom right, black, #303030);
-    color: white;
-
+.project-details {
     display: flex;
-    justify-items: center;
-    align-items: center;
-    padding: 1vmin;
-
-    transition: .5s linear;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
 }
 
-.a-icon:hover {
-    background-color: white;
-    border-color: #ff0033;
+.project-area {
+    flex: 1;
+    border-radius: 10px;
 }
 
-.pc-a {
-    width: 2vw;
-    height: 1vw;
-    background-color: white;
+/**/
+
+.pc-screen {
+    border: 1vmin solid #c0c0c0;
+    border-radius: 5px;
 }
 
-.pc-b {
-    width: 10vw;
-    height: 1vw;
-    background-color: white;
+.pc-bottom-1 {
+    width: 2vmin;
+    height: 1vmin;
+    background-color: #c0c0c0;
+}
+
+.pc-bottom-2 {
+    width: 10vmax;
+    height: 1vmin;
+    background-color: #c0c0c0;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
 
-.pc {
-    border: 1vw solid white;
-    border-radius: 5px;
-}
-
-.phone {
+.phone-screen {
     border: 2px solid #c0c0c0;
     border-radius: 10px;
     overflow: hidden;
@@ -271,7 +170,7 @@ reusable classes
     flex-direction: column;
 }
 
-.phone-menu {
+.phone-screen-menu {
     height: 10%;
     background: #a0a0a0;
     padding: 2px 0 2px 0;
@@ -284,30 +183,21 @@ reusable classes
     border-radius: 50%;
 }
 
-
+/**/
 #about {
     background-image: linear-gradient(black, #303030);
     
     flex-direction: column;
-
-    height: 100vh;
-
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.width-animation {
-    animation-play-state: paused;
 }
 
 .grid {
     width: 90%;
     display: grid;
-    gap: 1.5rem;
+    gap: clamp(.5rem, 2vmin, 2rem);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
 
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateY(4rem);
 
     transition: opacity 1s ease, transform 2s ease;
 }
@@ -318,91 +208,60 @@ reusable classes
 }
 
 .grid-block {
-    padding: 1vmax;
+    position: relative;
+
+    padding: clamp(1rem, 1vw, 2rem);
     border-radius: 10px;
     border: 1px solid white;
 
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    
+    gap: clamp(.5rem, 5%, 1rem);
 }
 
 .about-me-top {
     border: 1px solid #ff0033;
 }
 
+.grid-icon {
+    position: absolute; 
+    top: -.5rem; 
+    right: -.5rem;
 
-@media screen and (min-width: 768px) {
+    padding: .1rem;
+}
 
-    .width-animation {
-        animation: ease-in awa;
-        animation-timeline: view();
-        animation-range: exit;
-    }
-    
-    @keyframes awa {
-        from {
-            width: 100%;
-        }
-        to {
-            width: 50%;
-            border-radius: 20px;
-        }
-    }
+.grid-icon img {
+    width: clamp(1rem, 2vmax, 3rem);
+}
 
-    .project-info {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        gap: 4vh;
-    }
-    
-    .project-image {
-        margin: 5vh;
-        flex: 1;
-    }
-    .project-image .phone {
-        max-width: 100%;
-    }
 
-    .orientation {
-        flex-direction: row;
-    }
 
-    .full-height {
-        height: 100vh;
-    }
 
-    .project-area {
-        width: 95%;
-        height: 95%;
-    
-        border-radius: 20px;
-    
-        gap: 20px;
-        padding: 0;
-    }
+
+
+
+
+@media screen and (min-width: 40rem) {
 
     .current-project-container {
         display: flex;
-
         flex-direction: column;
-    
+
         height: 100%;
-        width: 2vw;
-    
+
+        width: clamp(2rem, 4vw, 10%);
+
         position: fixed;
         right: 0;
         z-index: 10000;
-    
-        padding: 5px;
-    
-        transition: .5s ease;
-    
+        
+        transition: .5s ease;    
     }
     
     .current-project-container:hover {
-        width: 6vw;
+        width: clamp(5rem, 6vmax, 10%);
         background-color: black;
         border-left: 1px solid white;
     }
@@ -413,6 +272,19 @@ reusable classes
     
     .current-project-container:hover .line {
         background-color: white;
+    }
+
+    .home-menu {
+        transform: translateX(clamp(2rem, 4vw, 10%));
+        text-decoration: none;
+        color: transparent;
+
+        transition: transform .5s ease, color .5s ease;
+    }
+    
+    .current-project-container:hover .home-menu {
+        transform: translateX(0);
+        color: white;
     }
     
     .circle {
@@ -436,43 +308,5 @@ reusable classes
         background-color: black;
         transition: background-color 1s ease;
     }
-    
-    .line {
-        height: 10px;
-        width: 1px;
-        background-color: black;
-    }
-    
-    .home-menu {
-        color: transparent;
-        text-decoration: none;
-    }
-    
-    .current-project-container:hover .home-menu {
-        color: white;
-    }
 
-    .normal-text {
-        font-size: 2vmin;
-    }
-    
-    .bigger-text {
-        font-size: 3vmin;
-    }
-    
-    .big-text {
-        font-size: 5vmin;
-    }
-
-    .click-here {
-        font-size: 2vmin;
-    }
-
-    .button-row {
-        font-size: 2vmin;
-    }
-
-    .chip-row-par {
-        width: 40%;
-    }
 }

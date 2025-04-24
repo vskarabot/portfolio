@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Vasja Škarabot</title>
 
     <link rel="icon" href="assets/icons/v-icon-2.png">
+
+    <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,191 +19,70 @@
     <script src="scripts/check-grid-in-view.js"></script>
 </head>
 <body>
-    <div class="scroll-percentage-line"></div>
+    <div class="scroll-progress-bar"></div>
     <div id="dot-menu" class="current-project-container flex-center">
         <a href="#" class="home-menu">Home</a>
     </div>
 
-    <article class="dark-circular-background full-height flex-center column" style="position: relative;">
-        <div class="big-text-container">
-            <div class="a2"></div>
-            <p class="big-text">Vasja Škarabot</p>
-        </div>
-        <!--<p class="normal-text"><i>Developer</i></p>-->
+    <article class="dark-circular-background flex-center column height-100">
+        <p class="my-name-text">Vasja Škarabot</p>
 
-        <a href="#about" class="click-here flex-center column">
+        <a href="#about" class="jump-to flex-center column">
             <p>Learn more</p>
-            <div class="click-here-arrow"></div>
+            <div class="jump-to-arrow"></div>
         </a>
     </article>
 
     <!-- dont forget width-animation -->
-    <article id="about" class="flex-center width-animation" style="position: relative;">
+    <article id="about" class="flex-center width-animation height-100">
             <div class="grid">
                 <div class="grid-block about-me-top">
-                    <p class="bigger-text">Who am I?</p>
-                    <p class="normal-text">
+                    <p class="title-text">Who am I?</p>
+                    <p class="description-text">
                         I am a bachelor of computer science, currently pursuing a masters degree in media sciences.
-                        Using the knowledge I've acquired over the years I started building web apps and mobile apps.
+                        During my studies I started to love building web and mobile apps.
                     </p>
                 </div>
-                <div class="grid-block" style="position: relative;">
-                    <div class="grid-icon" style="position: absolute; width: 2vmax; height: 2vmax; top: -.5vmax; right: -.5vmax; background-color: red;"></div>
-                    <p class="bigger-text">Work</p>
-                    <p class="normal-text">What i do / how / why its good (programming - like why my projects are good etc.)</p>
+                <div class="grid-block">
+                    <div class="grid-icon flex-center">
+                        <img src="assets/icons/tech-stack/vue.png">
+                    </div>
+                    <p class="title-text">Software Engineer</p>
+                    <p class="description-text">
+                        I'm never afraid to try new technologies.
+                        This allows me to build projects with different tech stacks ranging from Vue and React on frontend to Django and Express on backend,
+                        while using different relational databases like PostgreSQL and NoSQL databases like Firestore and MongoDB.
+                        I always give a lot of effort on making good looking UI's, that provide good UX.
+                    </p>
                 </div>
-                <div class="grid-block" style="position: relative;">
-                    <div class="grid-icon" style="position: absolute; width: 2vmax; height: 2vmax; top: -.5vmax; right: -.5vmax; background-color: red;"></div>
-                    <p class="bigger-text">Project ideas</p>
-                    <p class="normal-text">Ideas for the projects presented here are based on my hobbies.</p>
+                <div class="grid-block">
+                    <div class="grid-icon flex-center">
+                        <img src="assets/icons/tech-stack/vue.png">
+                    </div>
+                    <p class="title-text">Project ideas</p>
+                    <p class="description-text">I get my ideas for apps from every day world. 
+                        Sometimes it's just the need for something I wish it existed but doesn't yet.
+                        Other times I would just like to recreate some existing solutions, to see how they work.
+                    </p>
                 </div>
             </div>
     
-            <a href="#project-1" class="click-here flex-center column">
+            <a href="#project-1" class="jump-to flex-center column">
                 <p>My projects</p>
-                <div class="click-here-arrow"></div>
+                <div class="jump-to-arrow"></div>
             </a>
     </article>
 
-
-    <article id="project-1" class="full-height flex-center">
-        <div class="project-area flex-center dark-background orientation">
-            <div class="project-info  column  flex-center opacity-animation"> 
-                <div class="flex-center column">
-                    <p class="normal-text">Web</p>
-                    <p class="big-text">Festivals</p>
-                </div>
-                <div class="flex-center column text-gap">
-                    <p class="normal-text presentation-text">My biggest project to date. Website that provides all in one music festival solution for party goers.</p>
-                    <div class="separator-horizontal"></div>
-                </div>
-
-                <div class="chip-row-par">
-                    <div class="chip-row flex-center">
-                        <img class="chip" src="assets/icons/tech-stack/nuxt.png">
-                        <img class="chip chip-light" src="assets/icons/tech-stack/django.png">
-                        <img class="chip" src="assets/icons/tech-stack/postgres.png">
-                        <img class="chip chip-add" src="assets/icons/tech-stack/mapbox.png">
-                        <img class="chip chip-add" src="assets/icons/tech-stack/channels2.png">
-
-                        <img class="chip" src="assets/icons/tech-stack/nuxt.png">
-                        <img class="chip chip-light" src="assets/icons/tech-stack/django.png">
-                        <img class="chip" src="assets/icons/tech-stack/postgres.png">
-                        <img class="chip chip-add" src="assets/icons/tech-stack/mapbox.png">
-                        <img class="chip chip-add" src="assets/icons/tech-stack/channels2.png">
-                    </div>
-                </div>
-
+    <article id="project-1" class="flex-center height-100">
+        <div class="project-container column">
+            <div class="project-details" style="flex-direction: row;">
+                <p class="project-title-text">Festivals</p>
+                <p class="project-type-text"><i>Web App</i></p>
             </div>
-            <div id="festImages" class="project-image flex-center column  opacity-animation">
-                <img class="pc" src="assets/images/project-gallery/festivals/home.png" alt="festival">
-                <div class="pc-a"></div>
-                <div class="pc-b"></div>
-                <div class="info-text-container flex-center">
-                    <p id="img-desc-fest" class="normal-text presentation-text">Explore festivals</p>
-                </div>
-            </div>
+            <div class="project-area dark-background"></div>
         </div>
     </article>
-
-    <article id="project-2" class="full-height flex-center">
-        <div class="project-area flex-center dark-background orientation">
-            <div class="project-info column flex-center  opacity-animation"> 
-                <div class="flex-center column">
-                    <p class="normal-text">Mobile</p>
-                    <p class="big-text">Birds</p>
-                </div>
-                <div class="flex-center column  text-gap">
-                    <p class="normal-text presentation-text">This app is targeted towards Slovenian birders. It provides all the info about all birds ever seen in Slovenia, with interactive maps of sightings, yearly graphs. <!--Powered by AI it also provides sound ID and most likely birds to sight.--></p>
-                    <div class="separator-horizontal"></div>
-                </div>
-                <div class="chip-row-par">
-                    <div class="chip-row flex-center">
-                        <img class="chip" src="assets/icons/tech-stack/expo.png">
-                        <img class="chip" src="assets/icons/tech-stack/native.png">
-                        <img class="chip chip-light" src="assets/icons/tech-stack/express.png">
-                        <img class="chip" src="assets/icons/tech-stack/mongoose.png">
-                        <img class="chip" src="assets/icons/tech-stack/mongo.png">
-
-                        <img class="chip" src="assets/icons/tech-stack/expo.png">
-                        <img class="chip" src="assets/icons/tech-stack/native.png">
-                        <img class="chip chip-light" src="assets/icons/tech-stack/express.png">
-                        <img class="chip" src="assets/icons/tech-stack/mongoose.png">
-                        <img class="chip" src="assets/icons/tech-stack/mongo.png">
-                    </div> 
-                </div>
-            </div>
-            <div id="birdsImages" class="project-image flex-center column  opacity-animation">
-                <div class="phone">
-                    <div class="phone-menu flex-center">
-                        <div class="phone-camera flex-center"></div>
-                    </div>  
-                    <img src="assets/images/project-gallery/bos/loading.jpg" alt="hike">
-                    <div class="phone-menu flex-center"></div>  
-                </div>
-                <div class="info-text-container flex-center">
-                    <p id="img-desc-birds" class="normal-text presentation-text"></p>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article id="project-3" class="full-height flex-center">
-        <div class="project-area flex-center dark-background orientation">
-            <div class="project-info column flex-center  opacity-animation"> 
-                <div class="flex-center column">
-                    <p class="normal-text">Mobile</p>
-                    <p class="big-text">Hiker</p>
-                </div>
-                <div class="flex-center column  text-gap">
-                    <p class="normal-text presentation-text">This simple mobile app allows users to track their activites and find new hiking routes.</p>
-                    <div class="separator-horizontal"></div>
-                </div>
-
-                <div class="chip-row-no-animation flex-center">
-                    <img class="chip" src="assets/icons/tech-stack/expo.png">
-                    <img class="chip" src="assets/icons/tech-stack/native.png">
-                </div>
-
-            </div>
-            <div id="hikingImages" class="project-image flex-center column  opacity-animation">
-                <div class="phone">
-                    <div class="phone-menu flex-center">
-                        <div class="phone-camera flex-center"></div>
-                    </div>
-                    <img src="assets/images/project-gallery/hiking/loading.jpg" alt="hike">
-                    <div class="phone-menu flex-center"></div>
-                </div>
-                <div class="info-text-container flex-center">
-                    <p id="img-desc-hike" class="normal-text presentation-text"></p>
-                </div>
-            </div>
-        </div>
-    </article>
-
-    <article id="project-4" class="full-height flex-center">
-        <div class="flex-center project-area dark-background orientation">
-            <div class="project-info column  opacity-animation">
-                <div class="flex-center column">
-                    <p class="normal-text">Web</p>
-                    <p class="big-text">Wordle</p>
-                </div>
-                <div class="flex-center column  text-gap">
-                    <p class="normal-text presentation-text">Simple recreation of the famous New York Times puzzle game, where player has 5 guesses to find a preselected word. After each guess the game helps player with hints about character inclusion and position.</p>
-                    <div class="separator-horizontal"></div>
-                </div>
-                <div class="chip-row-no-animation flex-center">
-                    <img class="chip" src="assets/icons/tech-stack/react.png">
-                </div>
-            </div>
-            <div class="project-image flex-center column opacity-animation">
-                <img class="pc" src="assets/images/project-gallery/wordle/wordle.png" alt="wordle">
-                <div class="pc-a"></div>
-                <div class="pc-b"></div>
-            </div>
-        </div>
-    </article>
-   
+       
 
 </body>
 </html>
