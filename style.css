@@ -16,6 +16,11 @@ a {
     text-decoration: none;
 }
 
+img {
+    max-inline-size: 100%;
+    display: block;
+}
+
 /*
 reusable classes
 */
@@ -30,7 +35,9 @@ reusable classes
 }
 
 .dark-background {
-    background: black;
+    background-color: black;
+    background-image: 
+        radial-gradient(circle at 30% 60%, #ff003320, transparent 60%);
     box-shadow: 5px 15px 20px #505050;
 }
 
@@ -125,7 +132,8 @@ reusable classes
 .project-container {
     display: flex;
     width: 90%;
-    min-height: 70vh;
+
+    height: 80vh;
 }
 
 .project-details {
@@ -136,51 +144,25 @@ reusable classes
 }
 
 .project-area {
-    flex: 1;
+    height: 80vh;
+
     border-radius: 10px;
 }
 
-/**/
+.web {
 
-.pc-screen {
-    border: 1vmin solid #c0c0c0;
-    border-radius: 5px;
 }
 
-.pc-bottom-1 {
-    width: 2vmin;
-    height: 1vmin;
-    background-color: #c0c0c0;
+.mobile {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
 }
 
-.pc-bottom-2 {
-    width: 10vmax;
-    height: 1vmin;
-    background-color: #c0c0c0;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
-}
+.portrait-img {
+    height: 70vh;
 
-.phone-screen {
-    border: 2px solid #c0c0c0;
-    border-radius: 10px;
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.phone-screen-menu {
-    height: 10%;
-    background: #a0a0a0;
-    padding: 2px 0 2px 0;
-}
-
-.phone-camera {
-    width: 5px;
-    height: 5px;
-    background-color: #303030;
-    border-radius: 50%;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 /**/
@@ -299,7 +281,7 @@ reusable classes
         scale: 1.1 1.1;
         cursor: pointer;
     }
-    
+
     .current-project-container:hover .circle-active {
         background-color: #fff;
     }
@@ -307,6 +289,12 @@ reusable classes
     .circle-active {
         background-color: black;
         transition: background-color 1s ease;
+    }
+
+    .line {
+        width: 1px;
+        height: 10px;
+        background-color: white;
     }
 
 }
