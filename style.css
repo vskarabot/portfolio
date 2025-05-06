@@ -75,9 +75,13 @@ reusable classes
     font-size: clamp(1rem, 1.2vw, 1.5rem);
 }
 
+.project-description {
+    padding: clamp(.5rem, 2vw, 1rem);
+    color: black;
+}
+
+
 /**/
-
-
 .scroll-progress-bar {
     position: fixed;
     width: 100%;
@@ -144,25 +148,20 @@ reusable classes
 }
 
 .project-area {
-    height: 80vh;
+    height: 100%;
 
     border-radius: 10px;
 }
 
-.web {
-
-}
-
-.mobile {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
-}
-
 .portrait-img {
-    height: 70vh;
+    height: 80%;
 
-    max-width: 100%;
-    object-fit: contain;
+    max-width: 90%;
+    object-fit: cover;
+
+    border: solid #c0c0c0;
+    border-width: clamp(.5rem, 1vw, 1.5rem);
+    border-radius: .5rem;
 }
 
 /**/

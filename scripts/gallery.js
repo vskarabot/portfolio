@@ -1,5 +1,5 @@
 const imageFolders = {
-    festImages: [
+    festData: [
 
         { path: 'assets/images/project-gallery/festivals/searching.png', descr: 'Search festivals' },
     
@@ -24,7 +24,7 @@ const imageFolders = {
         { path:  'assets/images/project-gallery/festivals/home.png', descr: 'Explore festivals' },
 
     ],
-    birdsImages: [
+    birdData: [
 
         { path: 'assets/images/project-gallery/bos/home.jpg', descr: 'Explore all the species ever seen in Slovenia (list updated monthly)' },
         { path: 'assets/images/project-gallery/bos/search.jpg', descr: 'Search species by names (sl., en., sci.)' },
@@ -38,7 +38,7 @@ const imageFolders = {
         { path: 'assets/images/project-gallery/bos/loading.jpg', descr: '' },
 
     ],
-    hikingImages: [
+    hikeData: [
 
         { path: 'assets/images/project-gallery/hiking/recording.jpg', descr: 'Record your hikes' },
         { path: 'assets/images/project-gallery/hiking/recording-finished.jpg', descr: 'Record your hikes' },
@@ -53,9 +53,9 @@ const imageFolders = {
 
 document.addEventListener('DOMContentLoaded', () => {
     const galleries = [
-        document.getElementById('festImages'), 
-        document.getElementById('birdsImages'), 
-        document.getElementById('hikingImages')
+        document.getElementById('festData'), 
+        document.getElementById('birdData'), 
+        document.getElementById('hikeData')
     ];
 
     galleries.forEach((gallery) => {
@@ -68,15 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let index = 0;
         const changeImage = () => {
             // description
-            gallery.querySelector('p').textContent = imageFolders[gallery.id][index].descr;
+            gallery.querySelector('.project-description i').textContent = imageFolders[gallery.id][index].descr;
+            
             // image
-
-            if (gallery.children[0].className.includes('phone')) {
-                gallery.querySelector('.phone img').src = imageFolders[gallery.id][index].path;
-            }
-            else {
-                gallery.querySelector('img').src = imageFolders[gallery.id][index].path;
-            }
+            gallery.querySelector('.img-container img').src = imageFolders[gallery.id][index].path;
 
             index++;
             if (index === imageFolders[gallery.id].length)
@@ -84,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
         };
 
-        setInterval(changeImage, 2000);
+        setInterval(changeImage, 3000);
         
     });
 });
