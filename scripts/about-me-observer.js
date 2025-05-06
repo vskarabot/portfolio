@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const aboutMe = document.querySelector('.grid');
+    const aboutMeTop = document.querySelector('.about-me-top');
 
     const options = {
         root: null,
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
 
             entry.target.classList.add("grid-intersecting");
+
             observer.unobserve(aboutMe);
         })
     }, options);

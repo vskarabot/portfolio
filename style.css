@@ -181,18 +181,31 @@ reusable classes
 }
 
 .grid {
-    width: 90%;
+    width: 60%;
     display: grid;
     gap: clamp(.5rem, 2vmin, 2rem);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
 
-    transform: scale(0);
+    transform: translateY(100%);
+    color: transparent;
 
-    transition: .5s linear;
+    transition: transform 1s ease-out, width .3s ease-in, color .5s ease-in;
 }
 
 .grid-intersecting {
-    transform: scale(1);
+    transform: translateY(0);
+    width: 90%;
+    color: white;
+}
+
+.grid-intersecting .about-me-top {
+    animation: about-border-color 2s ease-out .5s forwards;
+}
+
+@keyframes about-border-color {
+    to {
+        border-color: #ff0033;
+    }
 }
 
 .grid-block {
@@ -209,7 +222,7 @@ reusable classes
 }
 
 .about-me-top {
-    border: 1px solid #ff0033;
+    border: 1px solid blue;
 }
 
 .grid-icon {
