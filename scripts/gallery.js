@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gallery.querySelector('.project-description i').textContent = imageFolders[gallery.id][index].descr;
             
             // image
-            gallery.querySelector('.img-container img').src = imageFolders[gallery.id][index].path;
+            gallery.querySelector('.portrait-img').src = imageFolders[gallery.id][index].path;
 
             index++;
             if (index === imageFolders[gallery.id].length)
