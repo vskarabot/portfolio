@@ -178,6 +178,8 @@ reusable classes
     background-image: linear-gradient(black, #303030);
     
     flex-direction: column;
+
+    transform-origin: top;
 }
 
 .grid {
@@ -186,7 +188,7 @@ reusable classes
     gap: clamp(.5rem, 2vmin, 2rem);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
 
-    transform: translateY(100%);
+    transform: translateY(50%);
     color: transparent;
 
     transition: transform 1s ease-out, width .3s ease-in, color .5s ease-in;
@@ -237,12 +239,13 @@ reusable classes
     width: clamp(1rem, 2vmax, 3rem);
 }
 
+#get-down {
+    border: 1px solid lime;
+}
 
-
-
-
-
-
+.current-project-container {
+    display: none;
+}
 
 @media screen and (min-width: 40rem) {
 
