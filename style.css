@@ -75,6 +75,20 @@ reusable classes
     font-size: clamp(1rem, 1.2vw, 1.5rem);
 }
 
+
+.proj-desc-container {
+    padding: .5rem;
+    position: relative;
+}
+
+.masked {
+    position: absolute;
+    inset: 0;
+    mask: linear-gradient(to right, transparent, black, transparent);
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
 .project-description {
     color: black;
 }
@@ -165,21 +179,16 @@ reusable classes
     border-radius: .5rem;
 }
 
-.proj-desc-container {
-    padding: 5px;
-    background-color: white;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    mask: linear-gradient(to right, transparent, black, transparent);
-}
-
 /**/
-#about {
-    background-image: linear-gradient(black, #303030);
-    
+#about {        
     flex-direction: column;
-
     transform-origin: top;
+
+    background-image: linear-gradient(black, #303030);
+
+    animation: a linear;
+    animation-timeline: view();
+    animation-range: exit 50vh;
 }
 
 .grid {
@@ -192,6 +201,23 @@ reusable classes
     color: transparent;
 
     transition: transform 1s ease-out, width .3s ease-in, color .5s ease-in;
+
+    animation: b linear;
+    animation-timeline: view();
+    animation-range: exit;
+}
+
+@keyframes a {
+    to {
+        transform: scale(0.9); 
+        border-radius: 10px;  
+    }
+}
+
+@keyframes b {
+    to {
+        opacity: 0.0; 
+    }
 }
 
 .grid-intersecting {
