@@ -246,22 +246,19 @@ reusable classes
     display: flex;
     flex-direction: column;
     
-    gap: clamp(.5rem, 5%, 1rem);
+    gap: clamp(1rem, 2vh, 1rem);
 }
 
 .about-me-top {
     border: 1px solid blue;
 }
 
-.grid-icon {
-    position: absolute; 
-    top: -.5rem; 
-    right: -.5rem;
-
-    padding: .1rem;
+.grid-title {
+    display: flex;
+    justify-content: space-between;
 }
 
-.grid-icon img {
+.grid-title img {
     width: clamp(1rem, 2vmax, 3rem);
 }
 
