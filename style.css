@@ -267,10 +267,12 @@ reusable classes
 .grid-title {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .grid-title img {
     width: clamp(1rem, 2vmax, 3rem);
+    align-self: auto;
 }
 
 #get-down {
@@ -286,13 +288,13 @@ reusable classes
     align-items: center;
     gap: .5rem;
 
-    height: clamp(1.5rem, 5vw, 3rem);
+    height: clamp(1.5rem, 5vw, 2.5rem);
 }
 
 .tech-icon {
     border: 1px solid #c0c0c0;
     border-radius: 10px;
-    padding: 0 2px 0 2px;
+    padding: 2px;
 
     height: 100%;
     width: 5rem;
