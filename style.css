@@ -168,15 +168,26 @@ reusable classes
     border-radius: 10px;
 }
 
-.portrait-img {
+.project-image {
     max-height: 60vh;
     max-width: 90%;
 
-    object-fit: cover;
-
-    border: solid #c0c0c0;
+    border-style: solid;
+    border-image: linear-gradient(to bottom right, white, #303030);
+    border-image-slice: 1;
     border-width: clamp(.2rem, .5vw, 1rem);
-    border-radius: .5rem;
+}
+
+.project-image {
+    transform: scale(.8);
+    opacity: 0;
+
+    transition: transform .2s linear, opacity .2s linear;
+}
+
+.image-active {
+    transform: scale(1);
+    opacity: 1;
 }
 
 /**/
@@ -290,7 +301,7 @@ reusable classes
     .current-project-container:hover {
         width: clamp(5rem, 6vmax, 10%);
         background-color: black;
-        border-left: 1px solid magenta;
+        border-left: 1px solid white;
     }
     
     .current-project-container:hover .circle {
@@ -339,7 +350,7 @@ reusable classes
     .line {
         width: 1px;
         height: 10px;
-        background-color: white;
+        background-color: black;
     }
 
 }
