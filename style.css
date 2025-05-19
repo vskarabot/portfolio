@@ -152,7 +152,7 @@ reusable classes
 
     gap: 1rem;
 
-    height: 80vh;
+    height: 90vh;
 }
 
 .project-details {
@@ -279,6 +279,27 @@ reusable classes
 
 .current-project-container {
     display: none;
+}
+
+.tech-stack {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    height: clamp(1.5rem, 5vw, 3rem);
+}
+
+.tech-icon {
+    border: 1px solid #c0c0c0;
+    border-radius: 10px;
+    padding: 0 2px 0 2px;
+
+    height: 100%;
+    width: 5rem;
+}
+
+.tech-icon img {
+    max-height: 100%;
 }
 
 @media screen and (min-width: 40rem) {
