@@ -76,24 +76,6 @@ reusable classes
 }
 
 
-.proj-desc-container {
-    padding: .5rem;
-    position: relative;
-}
-
-.masked {
-    position: absolute;
-    inset: 0;
-    mask: linear-gradient(to right, transparent, black, transparent);
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-.project-description {
-    color: black;
-}
-
-
 /**/
 .scroll-progress-bar {
     position: fixed;
@@ -150,7 +132,7 @@ reusable classes
     display: flex;
     width: 90%;
 
-    gap: 1rem;
+    gap: .5rem;
 
     height: 90vh;
 }
@@ -166,16 +148,17 @@ reusable classes
     flex: 1;
 
     border-radius: 10px;
+
+    gap: .2rem;
 }
 
 .project-image {
     max-height: 60vh;
     max-width: 90%;
 
-    border-style: solid;
-    border-image: linear-gradient(to bottom right, white, #303030);
-    border-image-slice: 1;
+    border: solid white;
     border-width: clamp(.2rem, .5vw, 1rem);
+    border-radius: 5px;
 }
 
 .project-image {
@@ -188,6 +171,14 @@ reusable classes
 .image-active {
     transform: scale(1);
     opacity: 1;
+}
+
+.pc-middle {
+    width: 2%; height: .5rem; background-color: white;
+}
+
+.pc-bottom {
+    width: 15%; height: .5rem; background-color: white; border-top-left-radius: 5px; border-top-right-radius: 5px;
 }
 
 /**/
@@ -336,7 +327,7 @@ reusable classes
     }
 
     .home-menu {
-        transform: translateX(clamp(2rem, 4vw, 10%));
+        transform: translateY(-100px);
         text-decoration: none;
         color: transparent;
 
@@ -344,7 +335,7 @@ reusable classes
     }
     
     .current-project-container:hover .home-menu {
-        transform: translateX(0);
+        transform: translateY(0);
         color: white;
     }
     

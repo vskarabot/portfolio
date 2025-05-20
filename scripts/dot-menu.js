@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log(dotMenu)
 
-    for (let i = 1; i < projectList.length; i++) {
+    for (let i = 1; i <= projectList.length; i++) {
         const circle = document.createElement('a');
 
         circle.href = `#project-${i}`;
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         circle.className = 'circle';
         dotMenu.appendChild(circle);
 
-        if (i !== projectList.length - 1) {
+        if (i !== projectList.length) {
             const line = document.createElement('div');
             line.className = 'line';
             dotMenu.appendChild(line);

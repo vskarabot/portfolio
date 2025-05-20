@@ -13,17 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
 
-    <!-- change images and then enable the gallery -->
-    <script src="scripts/gallery.js"></script>
-    <script src="scripts/dot-menu.js"></script>
-
     <script src="scripts/about-me-observer.js"></script>
 </head>
 <body>
     <div class="scroll-progress-bar"></div>
-    <div id="dot-menu" class="current-project-container flex-center">
-        <a href="#" class="home-menu">Home</a>
-    </div>
 
     <article class="dark-circular-background flex-center column height-100" style="position: relative;">
         <p class="my-name-text">Vasja Škarabot</p>
@@ -37,15 +30,14 @@
     <article id="about" class="flex-center height-100">
         <div class="grid">
             <div class="grid-block about-me-top">
-                <p class="title-text">Who am I?</p>
+                <p class="title-text">O meni</p>
                 <p class="description-text">
-                    I am a bachelor of computer science, currently pursuing a masters degree in media sciences.
-                    During my studies I started to love building web and mobile apps.
+                    Moje ime je Vasja Škarabot. Trenutno sem študent magistrskega programa Multimedija, na Fakulteti za računalništvo in informatiko v Ljubljani.
                 </p>
             </div>
             <div class="grid-block">
                 <div class="grid-title">
-                    <p class="title-text">Software Engineer</p>
+                    <p class="title-text">Stack of Skills, še en tak in dej contact</p>
                     <img src="assets/icons/code.png">
                 </div>
                 <p class="description-text">
@@ -57,7 +49,7 @@
             </div>
             <div class="grid-block">
                 <div class="grid-title">
-                    <p class="title-text">Project Ideas</p>
+                    <p class="title-text">Projekti</p>
                     <img src="assets/icons/idea.png">
                 </div>
                 <p class="description-text">I get my ideas for apps from every day world. 
@@ -67,138 +59,7 @@
             </div>
         </div>
 
-        <a href="#project-1" class="jump-to flex-center column" style="position: absolute; bottom: 0;">
-            <p>My work</p>
-            <div class="jump-to-arrow"></div>
-        </a>
     </article>
 
-    <article id="project-1" class="flex-center height-100">
-        <div id="festData" class="project-container column">
-
-                        <div class="tech-stack">
-                <div class="tech-icon flex-center">
-                    <img src="assets/icons/tech-stack/nuxt.png" alt="nuxt">
-                </div>
-                <div class="tech-icon flex-center">
-                    <img src="assets/icons/tech-stack/django.png" alt="django">
-                </div>
-                <div class="tech-icon flex-center">
-                    <img src="assets/icons/tech-stack/rest.png" alt="nuxt">
-                </div>
-                <div class="tech-icon flex-center">
-                    <img src="assets/icons/tech-stack/postgres.png" alt="postgres">
-                </div>
-                <div class="tech-icon flex-center" style="background-color: black;">
-                    <img src="assets/icons/tech-stack/mapbox.png" alt="mapbox">
-                </div>
-                <div class="tech-icon flex-center">
-                    <img src="assets/icons/tech-stack/channels.png" alt="channels">
-                </div>
-            </div>
-
-            <div class="project-details" style="flex-direction: row;">
-                <p class="project-title-text">Festivals</p>
-                <p class="project-type-text"><i>Web</i></p>
-            </div>
-
-
-
-            <div id="festImages" class="project-area web dark-background flex-center">
-                <img class="project-image image-active" src="assets/images/project-gallery/festivals/home.png">
-            </div>
-        
-            <div class="flex-center proj-desc-container">
-                <div class="masked"></div>
-                <p class="project-description"><i>Explore festivals</i></p>  
-            </div>
-        </div>
-    </article>
-
-    <article id="project-2" class="flex-center height-100">
-        <div id="birdData" class="project-container column">
-
-            <div class="tech-stack">
-                <div class="tech-icon flex-center" style="background-color: black;">
-                    <img src="assets/icons/tech-stack/expo.png" alt="nuxt">
-                </div>
-                <div class="tech-icon flex-center">
-                    <img src="assets/icons/tech-stack/native.png" alt="django">
-                </div>
-                <div class="tech-icon flex-center">
-                    <img src="assets/icons/tech-stack/express.png" alt="nuxt">
-                </div>
-                <div class="tech-icon flex-center">
-                    <img src="assets/icons/tech-stack/mongo.png" alt="postgres">
-                </div>
-                <div class="tech-icon flex-center" style="background-color: black;">
-                    <img src="assets/icons/tech-stack/mapbox.png" alt="mapbox">
-                </div>
-            </div>
-
-            <div class="project-details" style="flex-direction: row;">
-                <p class="project-title-text">Birds</p>
-                <p class="project-type-text"><i>Mobile</i></p>
-            </div>
-
-            <div id="birdsImages" class="project-area dark-background flex-center">
-                <img class="project-image image-active" src="assets/images/project-gallery/bos/loading.jpg">
-            </div>
-            <div class="flex-center proj-desc-container">
-                <div class="masked"></div>
-                <p class="project-description"><i>Discover new birds!</i></p>
-            </div>
-        </div>
-    </article>  
-
-    <article id="project-3" class="flex-center height-100">
-        <div id="hikeData" class="project-container column">
-
-            <div class="tech-stack">
-                <div class="tech-icon flex-center" style="background-color: black;">
-                    <img src="assets/icons/tech-stack/expo.png" alt="nuxt">
-                </div>
-                <div class="tech-icon flex-center">
-                    <img src="assets/icons/tech-stack/native.png" alt="django">
-                </div>
-                <div class="tech-icon flex-center" style="background-color: black;">
-                    <img src="assets/icons/tech-stack/mapbox.png" alt="mapbox">
-                </div>
-            </div>
-
-            <div class="project-details" style="flex-direction: row;">
-                <p class="project-title-text">Hiking</p>
-                <p class="project-type-text"><i>Mobile</i></p>
-            </div>
-
-            <div id="hikingImages" class="project-area dark-background flex-center">
-                <img class="project-image image-active" src="assets/images/project-gallery/hiking/loading.jpg">
-            </div>
-            <div class="flex-center proj-desc-container">
-                <div class="masked"></div>
-                <p class="project-description"><i>Hiking was never easier!</i></p>
-            </div>
-        </div>
-    </article>       
-
-    <article id="project-4" class="flex-center height-100">
-        <div class="project-container column">
-            
-            <div class="tech-stack">
-                <div class="tech-icon flex-center">
-                    <img src="assets/icons/tech-stack/react.png" alt="nuxt">
-                </div>
-            </div>
-
-            <div class="project-details" style="flex-direction: row;">
-                <p class="project-title-text">Wordle</p>
-                <p class="project-type-text"><i>Web</i></p>
-            </div>
-
-            <div class="project-area web dark-background flex-center">
-                <img class="project-image image-active" src="assets/images/project-gallery/wordle/wordle.png">
-            </div>
-        </div>
-    </article>      
 </body>
 </html>

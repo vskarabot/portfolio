@@ -71,10 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
             gallery.querySelector('.project-image').classList.remove('image-active');
 
             setTimeout(() => {
-                // description
-                gallery.querySelector('.project-description i').textContent = imageFolders[gallery.id][index].descr;            
                 // image
-                gallery.querySelector('.project-image').src = imageFolders[gallery.id][index].path;
+                gallery.querySelector('.project-image').src = "../" + imageFolders[gallery.id][index].path;
 
                 gallery.querySelector('.project-image').classList.add('image-active');
             }, 200);
@@ -85,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
         };
 
-        setInterval(changeImage, 5000);
+        setInterval(changeImage, 2000);
         
     });
 });
