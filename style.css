@@ -58,7 +58,7 @@ reusable classes
 }
 
 .title-text {
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(1rem, 3vw, 2rem);
 }
 
 .description-text {
@@ -190,13 +190,38 @@ reusable classes
     height: 80vh;
 }
 
+.grid-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    outline: 1px solid #a0a0a0;
+    border-radius: 5px;
+
+    background-color: #c0c0c010;
+
+    overflow: hidden;
+}
+
+.grid-block img {
+    filter: blur(3px);
+    opacity: .3;
+    transition: scale .2s ease-in-out, opacity .2s ease-in-out, filter .2s ease-in-out;
+}
+
 .grid-block:hover {
     cursor: pointer;
-    border-color: white;
+    outline: 2px solid white;
+}
+
+.grid-block:hover img {
+    scale: 1.1;
+    opacity: .8;
+    filter: blur(0);
 }
 
 .grid-block:first-child {
-    border-color: #ff0033;
+    outline-color: #ff0033;
 }
 
 @media (min-width: 40em) {
@@ -219,24 +244,11 @@ reusable classes
         grid-template-columns: repeat(4, 1fr);
     }
 
-    .grid-col-span-2 {
-        grid-column: span 2;
-    }
-
     .grid-block:last-child {
         grid-column-start: 4;
         grid-row-start: 1;
         grid-row-end: span 2;
     }
-}
-
-
-.grid-block {
-    border: 1px solid #c0c0c0;
-    border-radius: 5px;
-
-    padding: 1rem;
-    background-color: #c0c0c010;
 }
 
 .current-project-container {
