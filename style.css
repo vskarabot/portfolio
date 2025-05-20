@@ -182,92 +182,61 @@ reusable classes
 }
 
 /**/
-#about {        
-    flex-direction: column;
-    transform-origin: top;
-
-    background-image: linear-gradient(black, #303030);
-
-    animation: a linear;
-    animation-timeline: view();
-    animation-range: exit 50vh;
-}
-
-.grid {
-    width: 60%;
+.home-grid {     
     display: grid;
-    gap: clamp(.5rem, 2vmin, 2rem);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 1rem;
 
-    transform: translateY(50%);
-    color: transparent;
-
-    transition: transform 1s ease-out, width .3s ease-in, color .5s ease-in;
-
-    animation: b linear;
-    animation-timeline: view();
-    animation-range: exit;
+    width: 70vw;
+    height: 80vh;
 }
 
-@keyframes a {
-    to {
-        transform: scale(0.9); 
-        border-radius: 10px;  
+.grid-block:hover {
+    cursor: pointer;
+    border-color: white;
+}
+
+.grid-block:first-child {
+    border-color: #ff0033;
+}
+
+@media (min-width: 40em) {
+    .home-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-col-span-2 {
+        grid-column: span 2;
+    }
+
+    .grid-block:last-child {
+        grid-column: span 3;
     }
 }
 
-@keyframes b {
-    to {
-        opacity: 0.0; 
+
+@media (min-width: 60em) {
+    .home-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .grid-col-span-2 {
+        grid-column: span 2;
+    }
+
+    .grid-block:last-child {
+        grid-column-start: 4;
+        grid-row-start: 1;
+        grid-row-end: span 2;
     }
 }
 
-.grid-intersecting {
-    transform: translateY(0);
-    width: 90%;
-    color: white;
-}
-
-.grid-intersecting .about-me-top {
-    animation: about-border-color 2s ease-out .5s forwards;
-}
-
-@keyframes about-border-color {
-    to {
-        border-color: #ff0033;
-    }
-}
 
 .grid-block {
-    position: relative;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
 
-    padding: clamp(1rem, 1vw, 2rem);
-    border-radius: 10px;
-    border: 1px solid white;
-
-    display: flex;
-    flex-direction: column;
-    
-    gap: clamp(1rem, 2vh, 1rem);
-}
-
-.about-me-top {
-    border: 1px solid blue;
-}
-
-.grid-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.grid-title img {
-    width: clamp(1rem, 2vmax, 3rem);
-    align-self: auto;
-}
-
-#get-down {
-    border: 1px solid lime;
+    padding: 1rem;
+    background-color: #c0c0c010;
 }
 
 .current-project-container {
