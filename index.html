@@ -5,52 +5,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vasja Škarabot</title>
 
-    <link rel="icon" href="assets/icons/v-icon-2.png">
+    <!--<link rel="icon" href="assets/icons/v-icon-2.png">-->
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="clock.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <script src="scripts/theme-picker.js"></script>
+    <script src="scripts/time.js"></script>
+    <script src="scripts/clock.js"></script>
 
-    <script src="scripts/about-me-observer.js"></script>
 </head>
 <body>
-    <div class="scroll-progress-bar"></div>
+    <main class="flex-center height-100 dark-linear-background ">
 
-    <article class="dark-circular-background flex-center column height-100" style="position: relative;">
-        <p class="my-name-text">Vasja Škarabot</p>
+        <div class="grid">
+            <div class="grid-block flex grid-col-span-3 grid-row-span-4 welcome" style="position: relative;">
+                <div class="flex column short-info">
+                    <div class="flex column welcome-content">
+                        <h6>welcome</h6>
+                        <p>
+                            Hi, I'm <b>Vasja Škarabot</b>, and I'm a software developer.
+                        </p>
+                    </div>
+                    <div class="flex contact-links">
+                        <div class="contact-link flex-center">
+                            <img src="assets/icons/github-mark-white.png" alt="github" width="16">
+                        </div>
+                        <div class="contact-link flex-center">
+                            <img src="assets/icons/github-mark-white.png" alt="linkedin" width="16">
+                        </div>
+                    </div>
+                </div>
+                <div class="me">
+                    <!-- <img src="assets/images/person.jpg"> -->
+                </div>
+            </div>
+            <div class="grid-block grid-row-span-6 grid-padding flex column">
+                
+                <div class="flex column gap-1-rem">
+                    <div>
+                        <h2>About me</h2>
+                        <p class="p-small">I'm <b>Vasja Škarabot</b>, a software developer.</p>
+                    </div>
 
-        <a href="#main" class="jump-to flex-center column" style="position: absolute; bottom: 0;">
-            <p>Izvedi več</p>
-            <div class="jump-to-arrow"></div>
-        </a>
-    </article>
+                    <div class="p-small">
+                        <p>My primary tools of choice include:</p>
+                        <ul class="inside-list">
+                            <li>Vue</li>
+                            <li>React</li>
+                            <li>React Native</li>
+                            <li>Express</li>
+                            <li>Django</li>
+                            <li>PostgreSQL</li>
+                            <li>MongoDB</li>
+                        </ul>
+                    </div>
 
-    <main class="flex-center height-100 dark-background">
+                    <div class="p-small">
+                        When I have some free time I love hiking, playing different kinds of sports and in the recent times I also <i><b>try to</b></i> produce house music.
+                        For some more unusual time consumption - I collect old coins and birdwatch.
+                        When I start personal projects I always like to bring those activities in.
+                    </div>
 
-        <section id="main" class="home-grid">
-            <a href="/pages/about-me.html" class="grid-block about-me-top grid-col-span-2">
-                <p class="title-text" style="color: white; z-index: 1;">O meni</p>
+                </div>
+
+            </div>
+            <div class="grid-block grid-row-span-4 grid-padding flex column gap-1-rem">
+                <h3>Let's get in touch!</h3>
+
+                <div>
+                    <h6><i>Contact details</i></h6>
+                    <p>skarabot.vasja@gmail.com</p>
+                    <p class="p-small">041 573 724</p>
+                </div>
+
+                <div>
+                    <h6><i>Socials</i></h6>
+                    <ul class="list-no-dots">
+                        <li>Github</li>
+                        <li>LinkedIn</li>
+                        <li>Discord</li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="pages/projects.html" target="_blank" class="grid-block flex grid-block-link">
+                <div class="grid-link-content">
+                    <h4>My projects</h4>
+                    <img class="icon" src="assets/icons/icons8-arrow-50.png" height="16">
+                </div>
+                
+                <img src="assets/images/project-gallery/festivals/festival-forum-1.png">
             </a>
-            <article class="grid-block">
-                <p class="title-text" style="color: white; z-index: 1;">Znanja</p>
-            </article>
-            <article class="grid-block ">
-                <p class="title-text" style="color: white; z-index: 1;">Kontakt</p>
-            </article>
-            <a href="/pages/projects.html" class="grid-block grid-col-span-2"  style="position: relative;">
-                <p class="title-text" style="color: white; z-index: 1;">Projekti</p>
-                <img style="position: absolute; height: 100%; width: 100%; object-fit: cover;" src="assets/images/project-gallery/festivals/directions.png" alt="img">
-            </a>
-            <article class="grid-block">
-                <p class="title-text" style="color: white; z-index: 1;">Povezave</p>
-            </article>
-        </section>
 
-        <!-- o meni in znanja - na isti strani spodi -->
-        <!-- kontakt - opre modal za gmail -->
-        <!-- povezave - flexbox k expanda hovered item (github, facebook, linkedin)  -->
+            <div class="grid-block grid-padding flex column">
+                <cite class="p-small"><i>"I have no idea what to put here, but I am to afraid to break the grid."</i></cite>
+            </div>
+
+            <a href="" target="_blank" class="grid-block flex grid-block-link">
+                <div class="grid-link-content">
+                    <h4>GTA VI Countdown</h4>
+                    <img class="icon" src="assets/icons/icons8-arrow-50.png" height="16">
+                </div>
+                
+                <img src="assets/images/jason_lucia.jpg">
+            </a>
+
+            <div class="grid-block flex column grid-row-span-2 grid-padding clock-grid">
+                <div class="flex column" style="z-index: 1;">
+                    <h6>Current Time</h6>
+                    <h1 id="time"></h1>
+                </div>
+                <div class="clock">
+                    <h6 class="clock-number">I</h6>
+                    <h6 class="clock-number">II</h6>
+                    <h6 class="clock-number">III</h6>
+                    <h6 class="clock-number">IIII</h6>
+                    <h6 class="clock-number">V</h6>
+                    <h6 class="clock-number">VI</h6>
+                    <h6 class="clock-number">VII</h6>
+                    <h6 class="clock-number">VIII</h6>
+                    <h6 class="clock-number">IX</h6>
+                    <h6 class="clock-number">X</h6>
+                    <h6 class="clock-number">XI</h6>
+                    <h6 class="clock-number">XII</h6>
+                </div>
+            </div>
+
+            <a class="grid-block flex grid-block-link">
+                <div class="grid-link-content">
+                    <h4>CSS Playground</h4>
+                    <p class="p-small"><i>In progress</i></p>
+                    <!--<img class="icon" src="assets/icons/icons8-arrow-50.png" height="16">-->
+                </div>
+            </a>
+
+            <a href="https://soundcloud.com" target="_blank" class="grid-block flex grid-block-link">
+                <div class="grid-link-content">
+                    <h4 class="soundcloud-text">SoundCloud</h4>
+                    
+                    <div class="flex soundbar">
+                        <div class="freq f1"></div>
+                        <div class="freq f2"></div>
+                        <div class="freq f3"></div>
+                        <div class="freq f4"></div>
+                        <div class="freq f5"></div>
+                        <div class="freq f6"></div>
+                    </div>
+                </div>
+            </a>
+            
+            <a class="grid-block flex grid-block-link">
+                <div class="grid-link-content">
+                    <h4>Hobbies</h4>
+                    <p class="p-small"><i>In progress</i></p>
+                    <!--<img class="icon" src="assets/icons/icons8-arrow-50.png" height="16">-->
+                </div>
+            </a>
+
+            <div class="grid-block flex-center gap-1-rem">
+                <div class="color-circle" style="background-color: magenta;" color-code="#ff00ff"></div>
+                <div class="color-circle" style="background-color: lime;" color-code="#00ff00"></div>
+                <div class="color-circle" style="background-color: cyan;" color-code="#00ffff"></div>
+                <div class="color-circle" style="background-color: white;" color-code="#ffffff"></div>
+                <div class="color-circle" style="background-color: black;" color-code="#000000"></div>
+            </div>
+            <div class="grid-block flex-center">
+                <p class="p-small">© Vasja Škarabot 2025</p>
+            </div>
+
+        </div>
 
     </main>
 
