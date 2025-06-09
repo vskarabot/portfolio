@@ -10,12 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (const cnumber of numbers) {
 
-        const top = offset * Math.cos(angle);
-        const left = offset * Math.sin(angle);
+        const top = (offset - 16) * Math.cos(angle);
+        const left = (offset - 16) * Math.sin(angle);
         cnumber.style.top = `${offset + top}px`;
         cnumber.style.left = `${offset + left}px`;
-
-        console.log(angle)
 
         angle = angle - angleStep;
     }
