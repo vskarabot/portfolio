@@ -9,6 +9,13 @@ html, body, svg {
   margin: 0;
 }
 
+.country-name {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+
 main {
     display: flex;
     width: 100vw;
@@ -28,7 +35,6 @@ path, circle {
 
 circle:hover, path:hover {
     cursor: pointer;
-    fill: lime;
 }
 
 
@@ -39,44 +45,12 @@ aside {
     transform: translate(-50%);
 }
 
-.percentage {
+button, input {
     all: unset;
 
-    border: 1px solid #c0c0c0;
-    border-radius: 20px;
-
-    height: .5rem;
-    width: 25rem;
-}
-
-input {
-    all: unset;
-
-    border: 1px solid white;
-    border-radius: 20px;
-    color: white;
-
-    padding: .2rem .5rem .2rem .5rem;
-}
-
-button {
-    all: unset;
-
-    border: 1px solid white;
-    border-radius: 20px;
-    color: white;
-
-    padding: .5rem;
-}
-
-button:hover {
     background-color: white;
-    color: black;
-    cursor: pointer;
-}
+    border-radius: 5px;
+    padding: .5rem;
 
-.game {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
+    color: black;
 }
