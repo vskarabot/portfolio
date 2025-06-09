@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body, svg {
+  margin: 0;
+}
+
+main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+svg { 
+    background: linear-gradient(black, #505050, black);
+    height: 100%; 
+}
+
+path, circle {
+    fill: white;
+
+    transition: fill .2s linear;
+}
+
+circle:hover, path:hover {
+    cursor: pointer;
+    fill: lime;
+}
+
+
+aside {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.percentage {
+    all: unset;
+
+    border: 1px solid #c0c0c0;
+    border-radius: 20px;
+
+    height: .5rem;
+    width: 25rem;
+}
+
+input {
+    all: unset;
+
+    border: 1px solid white;
+    border-radius: 20px;
+    color: white;
+
+    padding: .2rem .5rem .2rem .5rem;
+}
+
+button {
+    all: unset;
+
+    border: 1px solid white;
+    border-radius: 20px;
+    color: white;
+
+    padding: .5rem;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
