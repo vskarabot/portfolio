@@ -1,0 +1,129 @@
+
+document.addEventListener('DOMContentLoaded', () => {
+    // first we need to find and join all of the countries teritories
+    // all countries -> path
+    // euro microstates -> circle
+
+    const mergeAllTeritoriesInCountries = () => {
+        const teritories = document.querySelectorAll('path, circle');
+        
+        const countries = {};
+        teritories.forEach(teritory => {
+            if (!countries[teritory.dataset.name])
+                countries[teritory.dataset.name] = [];    
+            
+            countries[teritory.dataset.name].push(teritory);
+        });
+
+        return countries;
+    }
+
+
+    const countries = mergeAllTeritoriesInCountries();
+
+    const displayCountry = (name, color) => {
+        countries[name].forEach(teritory => {
+            teritory.style.fill = color;
+        });
+    }
+
+
+    /* GAME */
+
+    // enough for basic game to work but we'll need to map "wrongly spelled countries"
+    const startGameButton = document.getElementById('start');
+    const input = document.getElementById('cInput');
+    const countdown = document.querySelector('.countdown');
+    const time = document.querySelector('.time');
+    const counter = document.querySelector('.counter');
+    const gameInfo = document.querySelector('.info');
+    const gameProgress = document.querySelector('.progress');
+    const recap = document.querySelector('.recap');
+    const closeRecap = document.getElementById('exit');
+    const resultNum = document.querySelector('.resultNum');
+    const resultPer = document.querySelector('.resultPer');
+
+    let guessed = [];
+    
+    const gameTime = 15 * 60 - 1;
+    let timeElapsed = 0;
+    let interval = null;
+
+    const countryGuessed = () => {
+        if (countries[input.value] && !guessed.includes(input.value)) {
+            guessed.push(input.value);
+            gameProgress.textContent = `${guessed.length} / ${Object.keys(countries).length}`;
+
+            displayCountry(input.value, 'lime');
+
+            input.value = '';
+        }
+    }
+
+    const addTime = () => {
+        timeElapsed++;
+        counter.textContent = timeElapsed;
+    }
+
+    const gameInit = () => {
+        input.style.display = 'flex';
+        countdown.style.display = 'flex';
+        counter.style.display = 'block';
+        startGameButton.style.display = 'block';
+        startGameButton.textContent = 'Give Up';
+        gameInfo.style.display = 'none';
+        gameProgress.style.display = 'block';
+        recap.style.display = 'none';
+
+        gameProgress.textContent = `0 / ${Object.keys(countries).length}`;
+
+        interval = setInterval(addTime, 1000);
+        input.addEventListener('keyup', countryGuessed);
+    }
+
+    const quitGame = () => {
+        input.style.display = 'none';
+        countdown.style.display = 'none';
+        counter.style.display = 'none';
+        startGameButton.style.display = 'none';
+        gameProgress.style.display = 'none';
+        recap.style.display = 'flex';
+        resultNum.textContent = guessed.length;
+
+        time.textContent = timeElapsed;
+        counter.textContent = '15:00';
+        timeElapsed = 0;
+        resultPer.textContent = `${(guessed.length / Object.keys(countries).length * 100).toFixed(2)} %`;
+        input.removeEventListener('keyup', countryGuessed);
+        clearInterval(interval);
+    }
+
+    // with the click on close the game at the end -> reset everything
+    closeRecap.addEventListener('click', () => {
+        recap.style.display = 'none';
+        gameInfo.style.display = 'block';
+        startGameButton.style.display = 'block';
+        startGameButton.dataset.status = '0';
+        startGameButton.textContent = 'Play';
+
+        guessed.forEach(guess => displayCountry(guess, 'white'));
+        guessed = [];
+        input.value = '';
+    });
+
+
+    // 
+    startGameButton.addEventListener('click', () => {
+        
+        if (startGameButton.dataset.status === "0") {
+            startGameButton.dataset.status = "1";
+            gameInit();
+            setTimeout(quitGame, gameTime * 1000);
+        }
+        else if (startGameButton.dataset.status === "1") {
+            startGameButton.dataset.status = "0";
+            quitGame();
+        }
+
+    });
+})

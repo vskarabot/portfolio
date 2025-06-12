@@ -1,8 +1,13 @@
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi/Satoshi-Variable.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Satoshi';
 }
 
 html, body, svg {
@@ -43,9 +48,20 @@ aside {
     bottom: 1rem;
     left: 50%;
     transform: translate(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
-button, input {
+.game {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+input {
     all: unset;
 
     background-color: white;
@@ -53,4 +69,109 @@ button, input {
     padding: .5rem;
 
     color: black;
+
+    display: none;
+}
+
+.progress, .counter {
+    display: none;
+}
+
+.countdown {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    height: .2rem;
+    background-color: lime;
+    border-radius: 10px;
+    width: 100vw;
+    animation: line-shrink 900s linear forwards;
+
+    display: none;
+}
+
+@keyframes line-shrink {
+    to {
+        width: 0;
+        background-color: red;
+    }
+}
+
+#start {
+    background-color: white;
+    padding: .5rem;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#start:hover {
+    scale: 1.1;
+    background-color: yellow;
+}
+
+.back {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.legend {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    border: 1px solid #c0c0c0;
+    padding: .5rem;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.legend-circle {
+    width: 1rem;
+    aspect-ratio: 1 / 1;
+    background-color: cyan;
+    border-radius: 50%;
+
+    animation: circle-blink 1s linear infinite alternate;
+}
+
+@keyframes circle-blink {
+    to {
+        box-shadow: 0 0 .5rem white;
+    }
+}
+
+.recap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width: min(20rem, 100%);
+    height: 10rem;
+    background: radial-gradient(circle at 70% -200%, #303030, black);
+
+    border-radius: 10px;
+    border: 1px solid #505050;
+
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.stats {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

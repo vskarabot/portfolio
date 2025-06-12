@@ -6,10 +6,17 @@
     <title>My world map</title>
 
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="visited.js"></script>
+    
 </head>
 <body>
     <div class="country-name"></div>
+
+    <div class="legend">
+        <p>Visited countries</p>
+        <div class="legend-circle"></div>
+    </div>
+
     <main>
         <?xml version="1.0"?>
         <svg baseprofile="tiny" fill="#ececec" height="857" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".2" version="1.2" viewbox="0 0 2000 857" width="2000" xmlns="http://www.w3.org/2000/svg">
@@ -972,15 +979,33 @@
         </svg>
         </main>
     <aside>
+        <p class="info">Can you name all the countries?</p>
+        <h1 class="progress"></h1>
         <div class="game">
-            <input type="text">
-            <div class="percentage"></div>
-        </div>
-        <div class="game-start">
-            <h4>As you can see I don't travel a lot 🥲...</h4>
-            <h4>... but I do know all the countries of the world! You?</h4>
-            <button id="start">Play</button>
+            <div id="start" data-status="0">Play</div>
+            <input type="text" id="cInput">
+            <h2 class="counter">15:00</h2>
         </div>
     </aside>
+
+    <div class="countdown"></div>
+
+    <div class="recap">
+        <div class="stats">
+            <div class="stat">
+                <p>Time</p>
+                <h2 class="time"></h2>
+            </div>
+            <div class="stat">
+                <p>Guessed</p>
+                <h2 class="resultNum">40</h2>
+            </div>
+            <div class="stat">
+                <p>Percentage</p>
+                <h2 class="resultPer">20%</h2>
+            </div>
+        </div>
+        <div id="exit">Close</div>
+    </div>
 </body>
 </html>
