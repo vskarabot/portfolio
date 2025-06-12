@@ -1,4 +1,6 @@
 
+const visited = ['Croatia', 'Slovenia', 'Italy', 'Austria', 'Hungary', 'Estonia', 'Greece'];
+
 document.addEventListener('DOMContentLoaded', () => {
     // first we need to find and join all of the countries teritories
     // all countries -> path
@@ -27,6 +29,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // color all visited countries at the start
+    visited.forEach(country => displayCountry(country, 'magenta'));
+
+    // display country name on hover
+    const paths = document.querySelectorAll('path');
+    const cName = document.querySelector('.country-name');
+    
+    paths.forEach(path => {
+        path.addEventListener('mouseenter', () => {
+            displayCountry(path.dataset.name, '#c0c0c0');
+            cName.textContent = path.dataset.name;
+        });
+        path.addEventListener('mouseleave', () => {
+            displayCountry(path.dataset.name, 'white');
+            cName.textContent = '';
+        });
+    })
 
     /* GAME */
 
@@ -43,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let guessed = [];
     
-    const gameTime = 15 * 60 - 1;
     let timeElapsed = 0;
     let interval = null;
 
@@ -69,6 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
         gameInfo.style.display = 'none';
         gameProgress.style.display = 'block';
         recap.style.display = 'none';
+        cName.style.display = 'none';
+
+        visited.forEach(country => displayCountry(country, 'white'));
 
         gameProgress.textContent = `0 / ${Object.keys(countries).length}`;
 
@@ -97,20 +118,21 @@ document.addEventListener('DOMContentLoaded', () => {
         startGameButton.style.display = 'block';
         startGameButton.dataset.status = '0';
         startGameButton.textContent = 'Play';
+        cName.style.display = 'block';
 
         guessed.forEach(guess => displayCountry(guess, 'white'));
+        visited.forEach(country => displayCountry(country, 'magenta'));
+
         guessed = [];
         input.value = '';
     });
 
 
-    // 
     startGameButton.addEventListener('click', () => {
         
         if (startGameButton.dataset.status === "0") {
             startGameButton.dataset.status = "1";
             gameInit();
-            setTimeout(quitGame, gameTime * 1000);
         }
         else if (startGameButton.dataset.status === "1") {
             startGameButton.dataset.status = "0";
