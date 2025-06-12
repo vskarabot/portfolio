@@ -33,9 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // enough for basic game to work but we'll need to map "wrongly spelled countries"
     const startGameButton = document.getElementById('start');
     const input = document.getElementById('cInput');
-    const countdown = document.querySelector('.countdown');
     const time = document.querySelector('.time');
-    const counter = document.querySelector('.counter');
     const gameInfo = document.querySelector('.info');
     const gameProgress = document.querySelector('.progress');
     const recap = document.querySelector('.recap');
@@ -62,13 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const addTime = () => {
         timeElapsed++;
-        counter.textContent = timeElapsed;
     }
 
     const gameInit = () => {
         input.style.display = 'flex';
-        countdown.style.display = 'flex';
-        counter.style.display = 'block';
         startGameButton.style.display = 'block';
         startGameButton.textContent = 'Give Up';
         gameInfo.style.display = 'none';
@@ -83,15 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const quitGame = () => {
         input.style.display = 'none';
-        countdown.style.display = 'none';
-        counter.style.display = 'none';
         startGameButton.style.display = 'none';
         gameProgress.style.display = 'none';
         recap.style.display = 'flex';
         resultNum.textContent = guessed.length;
 
-        time.textContent = timeElapsed;
-        counter.textContent = '15:00';
+        time.textContent = `${timeElapsed}s`;
         timeElapsed = 0;
         resultPer.textContent = `${(guessed.length / Object.keys(countries).length * 100).toFixed(2)} %`;
         input.removeEventListener('keyup', countryGuessed);

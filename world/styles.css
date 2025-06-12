@@ -21,15 +21,11 @@ html, body, svg {
     transform: translate(-50%);
 }
 
-main {
-    display: flex;
+svg { 
+    display: block;
+    background: linear-gradient(black, #505050, black);
     width: 100vw;
     height: 100vh;
-}
-
-svg { 
-    background: linear-gradient(black, #505050, black);
-    height: 100%; 
 }
 
 path, circle {
@@ -73,29 +69,8 @@ input {
     display: none;
 }
 
-.progress, .counter {
+.progress {
     display: none;
-}
-
-.countdown {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%);
-    height: .2rem;
-    background-color: lime;
-    border-radius: 10px;
-    width: 100vw;
-    animation: line-shrink 900s linear forwards;
-
-    display: none;
-}
-
-@keyframes line-shrink {
-    to {
-        width: 0;
-        background-color: red;
-    }
 }
 
 #start {
@@ -116,27 +91,6 @@ input {
     position: absolute;
     top: 1rem;
     left: 1rem;
-}
-
-.legend {
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-    border: 1px solid #c0c0c0;
-    padding: .5rem;
-
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-}
-
-.legend-circle {
-    width: 1rem;
-    aspect-ratio: 1 / 1;
-    background-color: cyan;
-    border-radius: 50%;
-
-    animation: circle-blink 1s linear infinite alternate;
 }
 
 @keyframes circle-blink {
