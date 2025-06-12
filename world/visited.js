@@ -76,6 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    input.addEventListener('keyup', countryGuessed);
+
+    
     const addTime = () => {
         timeElapsed++;
     }
@@ -94,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
         gameProgress.textContent = `0 / ${Object.keys(countries).length}`;
 
         interval = setInterval(addTime, 1000);
-        input.addEventListener('keyup', countryGuessed);
     }
 
     const quitGame = () => {
@@ -107,7 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
         time.textContent = `${timeElapsed}s`;
         timeElapsed = 0;
         resultPer.textContent = `${(guessed.length / Object.keys(countries).length * 100).toFixed(2)} %`;
-        input.removeEventListener('keyup', countryGuessed);
         clearInterval(interval);
     }
 
