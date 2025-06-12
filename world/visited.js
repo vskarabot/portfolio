@@ -1,11 +1,14 @@
 
 const visited = ['Croatia', 'Slovenia', 'Italy', 'Austria', 'Hungary', 'Estonia', 'Greece'];
 
+
+// TODO: right now when in game if user goues with mouse over country that he guessed it gets decolorized...
+// GAME DOESNT END WHEN ALL COUNTRIES FOUND
 document.addEventListener('DOMContentLoaded', () => {
+
     // first we need to find and join all of the countries teritories
     // all countries -> path
     // euro microstates -> circle
-
     const mergeAllTeritoriesInCountries = () => {
         const teritories = document.querySelectorAll('path, circle');
         
@@ -21,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    // countries as an object with teritories -> we can easily access each country, to display it
     const countries = mergeAllTeritoriesInCountries();
 
     const displayCountry = (name, color) => {
@@ -76,6 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // check if valid country on each key press
     input.addEventListener('keyup', countryGuessed);
 
     
