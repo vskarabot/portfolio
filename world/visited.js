@@ -1,6 +1,8 @@
 
 const visited = ['Croatia', 'Slovenia', 'Italy', 'Austria', 'Hungary', 'Estonia', 'Greece'];
-
+const visitedColor = 'magenta';
+const hoverColor = '#c0c0c0';
+const guessedColor = 'lime';
 
 // TODO: right now when in game if user goues with mouse over country that he guessed it gets decolorized...
 // GAME DOESNT END WHEN ALL COUNTRIES FOUND
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // color all visited countries at the start
-    visited.forEach(country => displayCountry(country, 'magenta'));
+    visited.forEach(country => displayCountry(country, visitedColor));
 
     // display country name on hover
     const paths = document.querySelectorAll('path');
@@ -42,11 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     paths.forEach(path => {
         path.addEventListener('mouseenter', () => {
-            displayCountry(path.dataset.name, '#c0c0c0');
+            if (path.style.fill !== visitedColor && path.style.fill !== guessedColor)
+                displayCountry(path.dataset.name, hoverColor);
             cName.textContent = path.dataset.name;
         });
         path.addEventListener('mouseleave', () => {
-            displayCountry(path.dataset.name, 'white');
+            if (path.style.fill !== visitedColor && path.style.fill !== guessedColor)
+                displayCountry(path.dataset.name, 'white');
             cName.textContent = '';
         });
     })
@@ -74,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             guessed.push(input.value);
             gameProgress.textContent = `${guessed.length} / ${Object.keys(countries).length}`;
 
-            displayCountry(input.value, 'lime');
+            displayCountry(input.value, guessedColor);
 
             input.value = '';
         }
@@ -127,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cName.style.display = 'block';
 
         guessed.forEach(guess => displayCountry(guess, 'white'));
-        visited.forEach(country => displayCountry(country, 'magenta'));
+        visited.forEach(country => displayCountry(country, visitedColor));
 
         guessed = [];
         input.value = '';
