@@ -1,10 +1,9 @@
 
-const visited = ['Croatia', 'Slovenia', 'Italy', 'Austria', 'Hungary', 'Estonia', 'Greece'];
-const visitedColor = 'magenta';
-const hoverColor = '#c0c0c0';
-const guessedColor = 'lime';
+const VISITED = ['Croatia', 'Slovenia', 'Italy', 'Austria', 'Hungary', 'Estonia', 'Greece'];
+const VISITED_COLOR = 'magenta';
+const HOVER_COLOR = '#c0c0c0';
+const GUESSED_COLOR = 'lime';
 
-// TODO: right now when in game if user goues with mouse over country that he guessed it gets decolorized...
 // GAME DOESNT END WHEN ALL COUNTRIES FOUND
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -36,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // color all visited countries at the start
-    visited.forEach(country => displayCountry(country, visitedColor));
+    VISITED.forEach(country => displayCountry(country, VISITED_COLOR));
 
     // display country name on hover
     const paths = document.querySelectorAll('path');
@@ -44,12 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     paths.forEach(path => {
         path.addEventListener('mouseenter', () => {
-            if (path.style.fill !== visitedColor && path.style.fill !== guessedColor)
-                displayCountry(path.dataset.name, hoverColor);
+            if (path.style.fill !== VISITED_COLOR && path.style.fill !== GUESSED_COLOR)
+                displayCountry(path.dataset.name, HOVER_COLOR);
             cName.textContent = path.dataset.name;
         });
         path.addEventListener('mouseleave', () => {
-            if (path.style.fill !== visitedColor && path.style.fill !== guessedColor)
+            if (path.style.fill !== VISITED_COLOR && path.style.fill !== GUESSED_COLOR)
                 displayCountry(path.dataset.name, 'white');
             cName.textContent = '';
         });
@@ -78,9 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
             guessed.push(input.value);
             gameProgress.textContent = `${guessed.length} / ${Object.keys(countries).length}`;
 
-            displayCountry(input.value, guessedColor);
+            displayCountry(input.value, GUESSED_COLOR);
 
             input.value = '';
+
+            if (guessed.length === Object.keys(countries).length)
+                quitGame();
         }
     }
 
@@ -93,7 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const gameInit = () => {
+        startGameButton.dataset.status = "1";
+
         input.style.display = 'flex';
+        input.focus();
+
         startGameButton.style.display = 'block';
         startGameButton.textContent = 'Give Up';
         gameInfo.style.display = 'none';
@@ -101,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         recap.style.display = 'none';
         cName.style.display = 'none';
 
-        visited.forEach(country => displayCountry(country, 'white'));
+        VISITED.forEach(country => displayCountry(country, 'white'));
 
         gameProgress.textContent = `0 / ${Object.keys(countries).length}`;
 
@@ -109,6 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const quitGame = () => {
+        startGameButton.dataset.status = "0";
+
         input.style.display = 'none';
         startGameButton.style.display = 'none';
         gameProgress.style.display = 'none';
@@ -131,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cName.style.display = 'block';
 
         guessed.forEach(guess => displayCountry(guess, 'white'));
-        visited.forEach(country => displayCountry(country, visitedColor));
+        VISITED.forEach(country => displayCountry(country, VISITED_COLOR));
 
         guessed = [];
         input.value = '';
@@ -141,11 +149,9 @@ document.addEventListener('DOMContentLoaded', () => {
     startGameButton.addEventListener('click', () => {
         
         if (startGameButton.dataset.status === "0") {
-            startGameButton.dataset.status = "1";
             gameInit();
         }
         else if (startGameButton.dataset.status === "1") {
-            startGameButton.dataset.status = "0";
             quitGame();
         }
 
