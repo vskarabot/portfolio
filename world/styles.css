@@ -14,6 +14,10 @@ html, body, svg {
   margin: 0;
 }
 
+body {
+    overflow: hidden;
+}
+
 .legend {
     position: absolute;
     top: 1rem;
@@ -23,6 +27,8 @@ html, body, svg {
     display: flex;
     align-items: center;
     gap: .5rem;
+
+    z-index: 10;
 }
 
 .legend-dot {
@@ -38,6 +44,12 @@ html, body, svg {
     top: 1rem;
     left: 50%;
     transform: translate(-50%);
+
+    background: black;
+    border-radius: 5px;
+    padding: .5rem;
+
+    z-index: 10;
 }
 
 svg { 
@@ -45,6 +57,7 @@ svg {
     background: linear-gradient(black, #505050, black);
     width: 100vw;
     height: 100vh;
+    scale: 1;   
 }
 
 path, circle {
@@ -74,6 +87,10 @@ aside {
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    padding: .5rem;
+    border-radius: 5px;
+    background-color: black;
 }
 
 input {

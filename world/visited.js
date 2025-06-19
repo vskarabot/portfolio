@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     VISITED.forEach(country => displayCountry(country, VISITED_COLOR));
 
     // display country name on hover
-    const paths = document.querySelectorAll('path');
+    const paths = document.querySelectorAll('path, circle');
     const cName = document.querySelector('.country-name');
     
     paths.forEach(path => {
@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const startGameButton = document.getElementById('start');
     const input = document.getElementById('cInput');
     const time = document.querySelector('.time');
-    const gameInfo = document.querySelector('.info');
     const gameProgress = document.querySelector('.progress');
     const recap = document.querySelector('.recap');
     const closeRecap = document.getElementById('exit');
@@ -102,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         startGameButton.style.display = 'block';
         startGameButton.textContent = 'Give Up';
-        gameInfo.style.display = 'none';
         gameProgress.style.display = 'block';
         recap.style.display = 'none';
         cName.style.display = 'none';
@@ -132,7 +130,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // with the click on close the game at the end -> reset everything
     closeRecap.addEventListener('click', () => {
         recap.style.display = 'none';
-        gameInfo.style.display = 'block';
         startGameButton.style.display = 'block';
         startGameButton.dataset.status = '0';
         startGameButton.textContent = 'Play';
