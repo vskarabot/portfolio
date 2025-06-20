@@ -50,6 +50,10 @@ reusable classes
     justify-content: center;
 }
 
+.space-between {
+    justify-content: space-between;
+} 
+
 .column {
     flex-direction: column;
 }
@@ -213,7 +217,7 @@ b {
     cursor: pointer;
 }
 
-.grid-block > img {
+.card-image {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -224,7 +228,7 @@ b {
     transition: filter .1s linear;
 }
 
-.grid-block:hover img {
+.grid-block:hover .card-image {
     filter: blur(0);
 }
 
@@ -247,7 +251,8 @@ b {
 }
 
 .grid-block-link {
-    overflow: hidden; position: relative;
+    overflow: hidden; 
+    position: relative;
 }
 
 .grid-block-link:hover .icon {
@@ -317,15 +322,19 @@ b {
 .contact-link {
     width: 3.75rem;
     height: 2rem;
-    border: 1px solid var(--theme-color);
+    border: 1px solid #a0a0a050;
     border-radius: 5px;
 
-    transition: box-shadow .1s linear;
+    transition: border-color .1s linear;
+}
+
+.contact-link > * {
+    color: white;
 }
 
 .contact-link:hover {
     cursor: pointer;
-    box-shadow: 1px 1px 1rem var(--theme-color);
+    border-color: #c0c0c0; 
 }
 
 .contact-link:hover > * {
