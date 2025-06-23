@@ -1,0 +1,24 @@
+main {
+    padding: 1rem;
+}
+
+.grid-block {
+    width: min(80%, 600px);
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+
+    width: 90%;
+
+    gap: 1rem;
+
+    flex-wrap: wrap;
+}
+
+.gallery-image {
+    flex: 1;
+    object-fit: cover;
+    width: 600px;
+}
