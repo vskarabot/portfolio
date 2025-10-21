@@ -16,6 +16,20 @@
 }
 
 
+#browser-warning {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 2000;
+
+    padding: .5rem;
+    border-radius: 1rem;
+
+    background-color: #FB84D0;
+    color: #22263c;
+}
+
 * {
     margin: 0;
 }
