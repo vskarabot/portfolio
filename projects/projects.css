@@ -28,3 +28,10 @@
     border: 1px solid #c0c0c040;
 }
 
+.mobile-gallery-image {
+    max-width: 350px;
+    border-radius: 1rem;
+
+    border: 5px solid #c0c0c040;
+}
+
