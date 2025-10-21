@@ -33,38 +33,7 @@
                     So I came up with an idea, that brings searching and exploring festivals into one place, 
                     combined with different options to connect with other festival goers and many other cool features that you'll see below.
                 </p> 
-                <h6>For more details, check out my <b><a href="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=160924&lang=slv">diploma</a></b></h6>
-            </div>
-        </div>
-
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Functionalities</p>
-                <p class="p-small">
-                    When I got the initial idea, I started thinking of all the functionalities, the app would support.
-                    I came up with the following:
-                </p>
-                <ul class="inside-list p-small">
-                    <li>Discovering and searching festivals</li>
-                    <li>Selected festival info</li>
-                    <li>Nearby accomodation search</li>
-                    <li>Route to festival planner</li>
-                    <li>Dedicated forum for each festival</li>
-                    <li>Public chat rooms</li>
-                    <li>Finding people with same interests and contacting them with private chats</li>
-                </ul>
-
-                <p class="p-small">
-                    This functionalities provide user with complete solution in one place.
-                    All it's left is to buy the tickets at the official seller.
-                </p>
-            </div>
-        </div>
-
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Planning</p>
-                
+                <p class="small-light">For more details, check out my <b><a href="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=160924&lang=slv">diploma</a></b></p>
             </div>
         </div>
 
@@ -99,6 +68,61 @@
             </div>
         </div>
 
+        <div class="grid-block grid-padding flex space-between">
+            <div class="flex column gap-1-rem">
+                <p>Functionalities</p>
+                <p class="small-light">
+                    The app supports following functionalities:
+                </p>
+                <ul class="inside-list p-small">
+                    <li>Discovering and searching festivals</li>
+                    <li>Selected festival info</li>
+                    <li>Nearby accomodation search</li>
+                    <li>Route to festival planner</li>
+                    <li>Dedicated forum for each festival</li>
+                    <li>Public chat rooms</li>
+                    <li>Finding people with same interests and contacting them with private chats</li>
+                </ul>
+
+                <p class="small-light">
+                    This functionalities provide user with complete solution in one place.
+                    All it's left is to buy the tickets at the official seller.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid-block grid-padding flex space-between">
+            <div class="flex column gap-1-rem">
+                <p>Planning</p>
+                
+                <p class="p-small">
+                    In the first stage of planning, I defined the app’s functionalities and created a use case diagram displayed below.
+                </p>
+                <img src="../assets/images/project-gallery/festivals/usecasefestivals.jpg">
+
+                <p class="p-small">
+                    App workflow:
+                </p>
+                <img src="../assets/images/project-gallery/festivals/Architecture.jpg">
+
+                <p class="p-small">
+                    The next step was to create database that supports all the functionalities, with <b>18</b> tables in total, that we can split into <b>4</b> parts based on what their goal is:
+                    
+                    <ul class="inside-list p-small">
+                        <li><i>User table</i> - allows user to signup/login and also connect to other tables, so they can can like, post, comment...</li>
+                        <li><i>Music festival tables</i> - contain infos about festivals, user favourites, genres, user favourite genres, festival genres... </li>
+                        <li><i>Forum tables</i> - contain infos about posts, comments and who liked them.</li>
+                        <li><i>Chat tables</i> - contain chat infos, chat members, messages and notifications.</li>
+                    </ul>
+                    <img src="../assets/images/project-gallery/festivals/baza.jpg">
+                </p>
+
+                <p class="p-small">Final app is presented in the gallery below.</p>
+            </div>
+        </div>
+
+        <br>
+        <h6 style="font-size: 1.125rem;">App gallery</h6>
         <div class="gallery">
             <img src="../assets/images/project-gallery/festivals/home.png" class="gallery-image">
             <img src="../assets/images/project-gallery/festivals/searching.png" class="gallery-image">

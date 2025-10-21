@@ -186,6 +186,7 @@ main {
 
     scale: 1.4;
 
+
     animation: scale-out-back ease-in forwards;
     animation-range: enter;
     animation-timeline: view();

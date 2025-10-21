@@ -102,7 +102,7 @@ h4 {
     font-weight: 600;
 }
 
-h6 {
+h6, .small-light {
     font-size: .875rem;
     font-weight: 100;
     color: #a0a0a0;
