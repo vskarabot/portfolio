@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound ID</title>
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+</head>
+<body>
+    <main class="flex-center height-100 column dark-linear-background gap-1-rem">
+        
+        <div class="grid-block grid-padding flex space-between">
+            <div>
+                <p><b>Sound ID</b></p>
+                <h6>*work in progress</h6>
+            </div>
+            <div class="flex contact-links">
+                <a href="https://github.com/vskarabot" target="_blank" class="contact-link flex-center">
+                    <img src="../assets/icons/github-mark-white.png" alt="github" width="16">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid-block grid-padding flex space-between">
+            <div class="flex column gap-1-rem">
+                <p>Languages Used</p>
+                <div class="p-small">
+                    <ul class="inside-list">
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="p-small">
+                    <h6>ML model:</h6>
+                    <ul class="inside-list">
+                        <li>Keras MobileNetV2 (CNN)</li>
+                    </ul>
+                </div>
+                <div class="p-small">
+                    <h6>Data:</h6>
+                    <ul class="inside-list">
+                        <li>xeno-canto</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-block grid-padding flex space-between">
+            <div class="flex column gap-1-rem">
+                <p>Project details</p>
+                <ul class="inside-list p-small">
+                    <li><b>Audio processing</b>: Extracts individual clips from larger recordings.</li>
+                    <li><b>Feature extraction</b>: Converts audio files into spectrograms for model input.</li>
+                    <li><b>Dataset management</b>Splits data into training and validation sets.</li>
+                    <li><b>Classification</b> Predicts specie from new audio clip.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid-block grid-padding flex space-between">
+            <div class="flex column gap-1-rem">
+                <p>Next steps</p>
+                <p class="p-small">
+                    The immediate goal is to improve owl species classification performance by expanding the dataset and refining the training process.
+                    Planned improvements include:
+                </p>
+                <ul class="inside-list p-small">
+                    <li><b>Data expansion</b>: Collect more owl recordings to reduce overfitting.</li>
+                    <li><b>Data augmentation</b>: Apply techniques such as noise addition, pitch shifting, and time stretching to make the model more robust to real-world recordings.</li>
+                    <li><b>Generalization</b>: Once owl classification is stable, extend the model to recognize other bird species and build a more comprehensive bird sound classifier.</li>
+                </ul>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
