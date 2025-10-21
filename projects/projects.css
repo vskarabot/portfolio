@@ -18,12 +18,14 @@
 
     gap: .5rem;
     margin: .5rem;
+
+    max-width: 1500px;
 }
 
 .gallery-image {
     flex: 1;
     object-fit: cover;
-    width: 600px;
+    min-width: 700px;
 
     border: 1px solid #c0c0c040;
 }
