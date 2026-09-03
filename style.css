@@ -217,6 +217,10 @@ b {
     cursor: pointer;
 }
 
+.color-circle.selected {
+    scale: 1.1;
+}
+
 .card-image {
     position: absolute;
     width: 100%;

@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
         circle.addEventListener('click', () => {
             const selectedColor = circle.getAttribute('color-code');
             document.documentElement.style.setProperty('--theme-color', selectedColor);
+
+            circles.forEach(c => c.classList.remove('selected'));
+            circle.classList.add('selected');
         });
     });
 });
