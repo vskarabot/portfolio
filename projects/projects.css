@@ -11,7 +11,7 @@ main.column {
 }
 
 .grid-block:hover {
-    border-color: #c0c0c040;
+    border-color: var(--border-subtle);
 }
 
 .gallery {

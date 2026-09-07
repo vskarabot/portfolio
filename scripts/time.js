@@ -2,16 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const time = document.getElementById('time');
 
-    setInterval(() => {
+    const pad = number => String(number).padStart(2, '0');
+
+    const render = () => {
         const currentTime = new Date();
 
-        const offsetInHours = currentTime.getTimezoneOffset() / 60;
-        
-        const hours = currentTime.toISOString().substring(11, 13);
-        const minutes = currentTime.toISOString().substring(14, 16);
-        const seconds = currentTime.toISOString().substring(17, 19);
+        const hours = pad(currentTime.getHours());
+        const minutes = pad(currentTime.getMinutes());
+        const seconds = pad(currentTime.getSeconds());
 
-        time.textContent = (hours - offsetInHours).toString().concat(":", minutes, ":", seconds);
-    }, 1000);
+        time.textContent = `${hours}:${minutes}:${seconds}`;
+    };
+
+    render();
+    setInterval(render, 1000);
 
 });
