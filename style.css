@@ -4,6 +4,23 @@ setup
 
 :root {
     --theme-color: #ff00ff;
+
+    --bg-top: black;
+    --bg-bottom: #202020;
+    --surface: #c0c0c010;
+
+    --border: #a0a0a050;
+    --border-subtle: #c0c0c040;
+    --border-strong: #505050;
+
+    --text-strong: #ffffff;
+    --text: #d0d0d0;
+    --link: #c0c0c0;
+    --text-muted: #a0a0a0;
+    --text-dim: #606060;
+
+    --radius: 10px;
+    --radius-sm: 5px;
 }
 
 @font-face {
@@ -24,12 +41,12 @@ setup
 html, body {
     scroll-behavior: smooth;
     font-family: 'Satoshi';
-    color: #d0d0d0;
+    color: var(--text);
 }
 
 a {
     text-decoration: none;
-    color: #c0c0c0;
+    color: var(--link);
 }
 
 img {
@@ -59,7 +76,7 @@ reusable classes
 }
 
 .dark-linear-background {
-    background-image: linear-gradient(black, #202020);
+    background-image: linear-gradient(var(--bg-top), var(--bg-bottom));
 }
 
 .height-100 {
@@ -92,9 +109,9 @@ reusable classes
     align-items: center;
     padding: .5rem 1rem .5rem 1rem;
 
-    border: 1px solid #505050;
-    border-radius: 10px;
-    background: radial-gradient(circle at -100% 200%, #505050, black) padding-box;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    background: radial-gradient(circle at -100% 200%, var(--border-strong), var(--bg-top)) padding-box;
 }
 
 .back .icon {
@@ -118,7 +135,7 @@ reusable classes
 }
 
 h2 {
-    color: white;
+    color: var(--text-strong);
 }
 
 h4 {
@@ -128,12 +145,12 @@ h4 {
 h6, .small-light {
     font-size: .875rem;
     font-weight: 100;
-    color: #a0a0a0;
+    color: var(--text-muted);
 }
 
 b {
     font-weight: bold;
-    color: white;
+    color: var(--text-strong);
 }
 
 /* Home page grid */
@@ -158,10 +175,10 @@ b {
 }
 
 .grid-block {
-    border: 1px solid #a0a0a050;
-    border-radius: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 
-    background-color: #c0c0c010;
+    background-color: var(--surface);
 
 }
 
@@ -241,7 +258,7 @@ b {
 }
 
 .grid-block:hover h3 {
-    color: white;
+    color: var(--text-strong);
 }
 
 .grid-link-content {
@@ -338,19 +355,19 @@ b {
 .contact-link {
     width: 3.75rem;
     height: 2rem;
-    border: 1px solid #a0a0a050;
-    border-radius: 5px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
 
     transition: border-color .1s linear;
 }
 
 .contact-link > * {
-    color: white;
+    color: var(--text-strong);
 }
 
 .contact-link:hover {
     cursor: pointer;
-    border-color: #c0c0c0; 
+    border-color: var(--link);
 }
 
 .contact-link:hover > * {
