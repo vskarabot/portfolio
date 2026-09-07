@@ -21,7 +21,7 @@ body {
 .legend {
     position: absolute;
     top: 1rem;
-    left: 1rem;
+    right: 1rem;
     height: 1rem;
 
     display: flex;
@@ -93,8 +93,8 @@ aside {
     padding: .5rem;    
 }
 
-.game, .legend {
-    
+.game, .legend, .back {
+
     border: 1px solid #505050;
     border-radius: 10px;
     background: 
@@ -135,12 +135,19 @@ input {
     position: absolute;
     top: 1rem;
     left: 1rem;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem .5rem 1rem;
 }
 
-@keyframes circle-blink {
-    to {
-        box-shadow: 0 0 .5rem white;
-    }
+.back .icon {
+    rotate: 225deg;
+}
+
+.back:hover {
+    border-color: #c0c0c0;
 }
 
 .recap {

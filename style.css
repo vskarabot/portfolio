@@ -82,6 +82,29 @@ reusable classes
     gap: 1rem;
 }
 
+.back {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    padding: .5rem 1rem .5rem 1rem;
+
+    border: 1px solid #505050;
+    border-radius: 10px;
+    background: radial-gradient(circle at -100% 200%, #505050, black) padding-box;
+}
+
+.back .icon {
+    rotate: 225deg;
+}
+
+.back:hover {
+    border-color: var(--theme-color);
+}
+
 /* fonts */
 
 .soundcloud-text {
@@ -134,16 +157,6 @@ b {
     justify-content: space-between;
 }
 
-.me {
-    position: absolute;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background-color: var(--theme-color);
-
-    opacity: .3;
-}
-
 .grid-block {
     border: 1px solid #a0a0a050;
     border-radius: 10px;
@@ -162,15 +175,6 @@ b {
 
     .short-info {
         flex: 2;
-    }
-
-    .me {
-        position: unset;
-        width: unset;
-        display: flex;
-        flex: 1;
-        background-color: #c0c0c0;
-        opacity: 1;
     }
 
     .grid {
@@ -251,16 +255,24 @@ b {
 }
 
 .grid-link-content .icon {
-    transition: transform .1s linear;
+    transition: translate .1s linear;
+}
+
+.grid-block-link:not(.external) .icon {
+    rotate: 45deg;
 }
 
 .grid-block-link {
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
 }
 
-.grid-block-link:hover .icon {
-    transform: translate(.5rem, -.5rem);
+.grid-block-link.external:hover .icon {
+    translate: .5rem -.5rem;
+}
+
+.grid-block-link:not(.external):hover .icon {
+    translate: .5rem 0;
 }
 
 .soundbar {
