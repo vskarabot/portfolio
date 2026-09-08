@@ -367,7 +367,7 @@ b {
 
 .contact-link:hover {
     cursor: pointer;
-    border-color: var(--link);
+    border-color: var(--theme-color);
 }
 
 .contact-link:hover > * {
