@@ -28,6 +28,91 @@ document.addEventListener('DOMContentLoaded', () => {
     // countries as an object with teritories -> we can easily access each country, to display it
     const countries = mergeAllTeritoriesInCountries();
 
+    const normalize = (name) => name
+        .normalize('NFD')
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, '');
+
+    const ALIASES = {
+        'United States': ['USA', 'US', 'United States of America', 'America'],
+        'United Kingdom': ['UK', 'Great Britain', 'Britain', 'England', 'GB'],
+        'Russian Federation': ['Russia'],
+        'Republic of Korea': ['South Korea', 'Korea South', 'Korea'],
+        'DR Korea': ['North Korea', 'Korea North', 'DPRK'],
+        'Lao PDR': ['Laos', 'Lao'],
+        'Myanmar': ['Burma'],
+        'Czech Republic': ['Czechia', 'Czech'],
+        'Swaziland': ['Eswatini'],
+        'Macedonia': ['North Macedonia'],
+        'Ivory Coast': ['Cote d Ivoire', 'Côte d Ivoire'],
+        'Democratic Republic of the Congo': ['DRC', 'DR Congo', 'Congo Kinshasa', 'Zaire', 'Congo Democratic Republic'],
+        'Republic of Congo': ['Congo', 'Congo Brazzaville', 'Congo Republic'],
+        'Timor-Leste': ['East Timor', 'Timor'],
+        'The Gambia': ['Gambia'],
+        'Cape Verde': ['Cabo Verde'],
+        'United Arab Emirates': ['UAE', 'Emirates'],
+        'Federated States of Micronesia': ['Micronesia'],
+        'São Tomé and Principe': ['Sao Tome', 'Sao Tome and Principe'],
+        'Vatican City': ['Vatican', 'Holy See'],
+        'Brunei Darussalam': ['Brunei'],
+        'Central African Republic': ['CAR'],
+        'Bosnia and Herzegovina': ['Bosnia', 'Bosnia Herzegovina', 'BiH'],
+        'Netherlands': ['Holland', 'The Netherlands'],
+        'Ireland': ['Republic of Ireland', 'Eire'],
+        'Saint Lucia': ['St Lucia'],
+        'Saint Kitts and Nevis': ['St Kitts and Nevis', 'St Kitts'],
+        'Saint Vincent and the Grenadines': ['St Vincent and the Grenadines', 'St Vincent', 'Saint Vincent'],
+        'Trinidad and Tobago': ['Trinidad', 'Tobago'],
+        'Antigua and Barbuda': ['Antigua', 'Barbuda'],
+        'Papua New Guinea': ['PNG'],
+        'Palestine': ['Palestinian Territories', 'State of Palestine'],
+        'Turkey': ['Türkiye', 'Turkiye'],
+        'Dominican Republic': ['Dominican Rep'],
+        'South Africa': ['RSA'],
+        'New Zealand': ['NZ'],
+        'Vietnam': ['Viet Nam'],
+        'Syria': ['Syrian Arab Republic'],
+        'Iran': ['Islamic Republic of Iran', 'Persia'],
+        'Bolivia': ['Plurinational State of Bolivia'],
+        'Venezuela': ['Bolivarian Republic of Venezuela'],
+        'Tanzania': ['United Republic of Tanzania'],
+        'Moldova': ['Republic of Moldova'],
+        'Bahamas': ['The Bahamas'],
+        'Marshall Islands': ['The Marshall Islands'],
+        'Solomon Islands': ['The Solomon Islands'],
+        'Philippines': ['The Philippines'],
+        'Western Sahara': ['Sahrawi Republic'],
+        'Kosovo': ['Republic of Kosovo'],
+    };
+
+    const buildLookup = () => {
+        const lookup = {};
+
+        const register = (key, canonical) => {
+            const normalized = normalize(key);
+            if (normalized && !lookup[normalized])
+                lookup[normalized] = canonical;
+        };
+
+        const variants = (name) => [
+            name,
+            name.replace(/\b(and|the|of)\b/gi, ''),
+        ];
+
+        Object.keys(countries).forEach(name => {
+            variants(name).forEach(variant => register(variant, name));
+        });
+
+        Object.entries(ALIASES).forEach(([canonical, aliases]) => {
+            if (!countries[canonical]) return;
+            aliases.forEach(alias => variants(alias).forEach(variant => register(variant, canonical)));
+        });
+
+        return lookup;
+    };
+
+    const lookup = buildLookup();
+
     const displayCountry = (name, color) => {
         countries[name].forEach(teritory => {
             teritory.style.fill = color;
@@ -72,11 +157,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let interval = null;
 
     const countryGuessed = () => {
-        if (countries[input.value] && !guessed.includes(input.value)) {
-            guessed.push(input.value);
+        const match = lookup[normalize(input.value)];
+
+        if (match && !guessed.includes(match)) {
+            guessed.push(match);
             gameProgress.textContent = `${guessed.length} / ${Object.keys(countries).length}`;
 
-            displayCountry(input.value, GUESSED_COLOR);
+            displayCountry(match, GUESSED_COLOR);
 
             input.value = '';
 
