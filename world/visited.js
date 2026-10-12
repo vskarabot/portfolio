@@ -1,7 +1,7 @@
 
-const VISITED = ['Croatia', 'Slovenia', 'Italy', 'Austria', 'Hungary', 'Estonia', 'Greece'];
-const VISITED_COLOR = 'magenta';
-const HOVER_COLOR = '#c0c0c0';
+const VISITED = ['Croatia', 'Slovenia', 'Italy', 'Austria', 'Hungary', 'Estonia', 'Poland', 'Germany', 'Greece', 'United Kingdom'];
+const VISITED_COLOR = 'lime';
+const HOVER_COLOR = 'gold';
 const GUESSED_COLOR = 'lime';
 
 // GAME DOESNT END WHEN ALL COUNTRIES FOUND

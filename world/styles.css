@@ -28,16 +28,18 @@ body {
     align-items: center;
     gap: .5rem;
 
-    padding: .5rem;
+    padding: .5rem 1rem;
 
     z-index: 10;
+
+    font-size: 1rem;
 }
 
 .legend-dot {
-    height: 100%;
+    height: .5rem;
     aspect-ratio: 1 / 1;
 
-    background: magenta;
+    background: lime;
     border-radius: 50%;
 }
 
@@ -46,17 +48,16 @@ body {
     top: 1rem;
     left: 50%;
     transform: translate(-50%);
-
-    background: black;
-    border-radius: 5px;
-    padding: .5rem;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: gold;
 
     z-index: 10;
 }
 
 svg { 
     display: block;
-    background: linear-gradient(black, #505050, black);
+    background: radial-gradient(#016783, black);
     width: 100vw;
     height: 100vh;
     scale: 1;   
@@ -93,12 +94,9 @@ aside {
     padding: .5rem;    
 }
 
-.game, .legend {
-    
-    border: 1px solid #505050;
-    border-radius: 10px;
-    background: 
-        radial-gradient(circle at -100% 200%, #505050, black) padding-box;
+.legend {
+    padding: .5rem 1rem;
+    background: #016783;
 }
 
 input {
@@ -118,17 +116,17 @@ input {
 }
 
 #start {
-    background-color: white;
-    padding: .5rem;
-    border-radius: 10px;
-    color: black;
+    background-color: #016783;
+    padding: 1rem;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 400;
+    font-size: 1.25rem;
+    box-shadow: 1px 1px 0 white;
+    transition: box-shadow .1s ease-in-out;
 }
 
 #start:hover {
-    scale: 1.1;
-    background-color: yellow;
+    box-shadow: 1px 1px 0 #0281a4;
 }
 
 .back {
@@ -155,8 +153,8 @@ input {
     border-radius: 10px;
     border: transparent 2px solid;
     background: 
-        radial-gradient(circle at 100% 200%, #505050, black) padding-box,
-        linear-gradient(to bottom right, blue, red) border-box;
+        linear-gradient(to bottom, black) padding-box,
+        linear-gradient(to bottom right, #0281a4) border-box;
 
     display: none;
     flex-direction: column;
