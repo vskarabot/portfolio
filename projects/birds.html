@@ -12,96 +12,93 @@
     <link rel="stylesheet" href="projects.css">
 
     <script src="../scripts/theme-picker.js"></script>
+    <script src="../scripts/gallery.js" defer></script>
 </head>
 <body>
     <a class="back" href="./index.html"><img class="icon" src="../assets/icons/icons8-arrow-50.png" height="16" alt="Projects"></a>
 
-    <main class="flex-center height-100 column dark-linear-background gap-1-rem">
-        
-        <div class="grid-block grid-padding flex space-between">
-            <div>
-                <p><b>Birds</b></p>
-                <h6>discover the birds around you</h6>
-            </div>
-            <div class="flex contact-links">
-                <a href="https://github.com/vskarabot" target="_blank" class="contact-link flex-center">
-                    <img src="../assets/icons/github-mark-white.png" alt="github" width="16">
+    <main class="project dark-linear-background">
+
+        <header class="project-hero">
+            <p class="eyebrow">Mobile app</p>
+            <h1>Birds</h1>
+            <p class="tagline">discover the birds around you</p>
+            <div class="hero-actions">
+                <a href="https://github.com/vskarabot/birds-frontend" target="_blank" class="button">
+                    <img src="../assets/icons/github-mark-white.png" alt="" width="16">
+                    Source code
                 </a>
             </div>
-        </div>
+        </header>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Short Description</p>
-                <p class="p-small">
-                    When I was around 8 years old I saw a book about birds in a local bookstore and asked my parents to buy it.
-                    I liked the book but didn't actually know these birds live around us so I kinda forgot about it.
-                    Fast forward ~ 10 years later COVID-19 comes in play and as I live in a pretty rural area I started hiking a lot and observing nature around me.
-                    Then I found out about a website called e-bird, where users can post bird sightings and decided to try it but I didn't like how complex it is
-                    and I hated the fact that I basically needed 3 different mobile apps for it to be helpful.
-                    So I decided to build a simpler version using their free API endpoints.
-                </p> 
-            </div>
-        </div>
+        <section class="project-section">
+            <h2 class="section-title"><span>01</span> About</h2>
+            <p>
+                When I was around 8 years old I saw a book about birds in a local bookstore and asked my parents to buy it.
+                I liked the book but didn't actually know these birds live around us so I kinda forgot about it.
+                Fast forward ~ 10 years later COVID-19 comes in play and as I live in a pretty rural area I started hiking a lot and observing nature around me.
+                Then I found out about a website called e-bird, where users can post bird sightings and decided to try it but I didn't like how complex it is
+                and I hated the fact that I basically needed 3 different mobile apps for it to be helpful.
+                So I decided to build a simpler version using their free API endpoints.
+            </p>
+        </section>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Tools Used</p>
-                <div class="p-small">
-                    <ul class="inside-list">
-                        <li>Expo (React Native)</li>
-                        <li>Express.js</li>
-                        <li>MongoDB</li>
-                    </ul>
+        <section class="project-section">
+            <h2 class="section-title"><span>02</span> Stack</h2>
+            <dl class="stack">
+                <div>
+                    <dt>Core</dt>
+                    <dd class="chips"><span class="chip">Expo (React Native)</span><span class="chip">Express.js</span><span class="chip">MongoDB</span></dd>
                 </div>
-                <div class="p-small">
-                    <h6>Maps platform:</h6>
-                    <ul class="inside-list">
-                        <li>Mapbox</li>
-                    </ul>
+                <div>
+                    <dt>Maps platform</dt>
+                    <dd class="chips"><span class="chip">Mapbox</span></dd>
                 </div>
-                <div class="p-small">
-                    <h6>Data:</h6>
-                    <ul class="inside-list">
-                        <li>e-bird platform</li>
-                    </ul>
+                <div>
+                    <dt>Data</dt>
+                    <dd class="chips"><span class="chip">e-bird platform</span></dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title"><span>03</span> Features</h2>
+            <ul class="features">
+                <li>Connecting to e-bird</li>
+                <li>Discovering and searching birds by taxonomy</li>
+                <li>Explore selected bird details</li>
+                <li>Explore nearby sightings in last x days by species</li>
+                <li>See yearly graphs of sightings*</li>
+                <li>Add a sighting*</li>
+            </ul>
+            <p class="note">
+                Now I can easily track e-bird sightings in my area, with future plans to track my own sightings with different charts.
+            </p>
+        </section>
+
+        <section class="gallery-section phones" data-gallery>
+            <div class="gallery-heading">
+                <div>
+                    <h2>App gallery</h2>
+                    <p>Swipe or click to enlarge</p>
+                </div>
+                <div class="gallery-nav">
+                    <button class="gallery-btn" data-dir="-1" aria-label="Previous screenshot">&#x2190;</button>
+                    <button class="gallery-btn" data-dir="1" aria-label="Next screenshot">&#x2192;</button>
                 </div>
             </div>
-        </div>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Functionalities</p>
-                <p class="small-light">
-                    The app supports following functionalities:
-                </p>
-                <ul class="inside-list p-small">
-                    <li>Connecting to e-bird</li>
-                    <li>Discovering and searching birds by taxonomy</li>
-                    <li>Explore selected bird details</li>
-                    <li>Explore nearby sightings in last x days by specie</li>
-                    <li>See yearly graphs of sightings*</li>
-                    <li>Add a sighting*</li>
-                </ul>
-
-                <p class="small-light">
-                    Now I can easily track e-bird sightings in my area, with future plans to track my own sightings with different charts.
-                </p>
+            <div class="gallery-track" tabindex="0" aria-label="App screenshots">
+                <figure><div class="phone"><img src="../assets/images/project-gallery/bos/loading.webp" alt="Loading screen" width="1080" height="2312" decoding="async"></div><figcaption>Loading screen</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/bos/home.webp" alt="Home" width="1080" height="2312" decoding="async"></div><figcaption>Home</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/bos/search.webp" alt="Search" width="1080" height="2312" decoding="async"></div><figcaption>Search</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/bos/bird-details.webp" alt="Bird details" width="1080" height="2312" decoding="async"></div><figcaption>Bird details</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/bos/bird-details-2.webp" alt="More bird details" width="1080" height="2312" loading="lazy" decoding="async"></div><figcaption>More bird details</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/bos/selected-sighting.webp" alt="Selected sighting" width="1080" height="2312" loading="lazy" decoding="async"></div><figcaption>Selected sighting</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/bos/selected-sighting-2.webp" alt="Sighting details" width="1080" height="2312" loading="lazy" decoding="async"></div><figcaption>Sighting details</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/bos/30d50km.webp" alt="Sightings in the last 30 days within 50 km" width="1080" height="2312" loading="lazy" decoding="async"></div><figcaption>Last 30 days, 50 km</figcaption></figure>
             </div>
-        </div>
-
-        <br>
-        <h6 style="font-size: 1.125rem;">App gallery</h6>
-        <div class="gallery mobile-gallery">
-            <img src="../assets/images/project-gallery/bos/loading.webp" class="gallery-image mobile-gallery-image" width="1080" height="2312" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/bos/home.webp" class="gallery-image mobile-gallery-image" width="1080" height="2312" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/bos/search.webp" class="gallery-image mobile-gallery-image" width="1080" height="2312" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/bos/bird-details.webp" class="gallery-image mobile-gallery-image" width="1080" height="2312" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/bos/bird-details-2.webp" class="gallery-image mobile-gallery-image" width="1080" height="2312" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/bos/selected-sighting.webp" class="gallery-image mobile-gallery-image" width="1080" height="2312" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/bos/selected-sighting-2.webp" class="gallery-image mobile-gallery-image" width="1080" height="2312" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/bos/30d50km.webp" class="gallery-image mobile-gallery-image" width="1080" height="2312" loading="lazy" decoding="async">
-        </div>
+        </section>
 
     </main>
 </body>

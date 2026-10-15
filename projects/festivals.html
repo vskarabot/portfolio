@@ -12,143 +12,143 @@
     <link rel="stylesheet" href="projects.css">
 
     <script src="../scripts/theme-picker.js"></script>
+    <script src="../scripts/gallery.js" defer></script>
 </head>
 <body>
     <a class="back" href="./index.html"><img class="icon" src="../assets/icons/icons8-arrow-50.png" height="16" alt="Projects"></a>
 
-    <main class="flex-center height-100 column dark-linear-background gap-1-rem">
-        
-        <div class="grid-block grid-padding flex space-between">
-            <div>
-                <p><b>Festivals</b></p>
-                <h6>all in one solution for music festival goers</h6>
-            </div>
-            <div class="flex contact-links">
-                <a href="https://github.com/vskarabot" target="_blank" class="contact-link flex-center">
-                    <img src="../assets/icons/github-mark-white.png" alt="github" width="16">
+    <main class="project dark-linear-background">
+
+        <header class="project-hero">
+            <p class="eyebrow">Web app · Diploma thesis</p>
+            <h1>Festivals</h1>
+            <p class="tagline">all in one solution for music festival goers</p>
+            <div class="hero-actions">
+                <a href="https://github.com/vskarabot/festivals" target="_blank" class="button">
+                    <img src="../assets/icons/github-mark-white.png" alt="" width="16">
+                    Source code
                 </a>
+                <a href="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=160924&lang=slv" target="_blank" class="button">Read the diploma</a>
             </div>
-        </div>
+        </header>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Short Description</p>
-                <p class="p-small">
-                    Since I was a little kid, I've always liked music - especially house music and it's subgenres. 
-                    So naturally when I was old enough I started visiting music festivals.
-                    But one thing that always bothered me was how hard it is to find good festival related info.
-                    So I came up with an idea, that brings searching and exploring festivals into one place, 
-                    combined with different options to connect with other festival goers and many other cool features that you'll see below.
-                </p> 
-                <p class="small-light">For more details, check out my <b><a href="https://repozitorij.uni-lj.si/IzpisGradiva.php?id=160924&lang=slv">diploma</a></b></p>
-            </div>
-        </div>
+        <section class="project-section">
+            <h2 class="section-title"><span>01</span> About</h2>
+            <p>
+                Since I was a little kid, I've always liked music - especially house music and its subgenres.
+                So naturally when I was old enough I started visiting music festivals.
+                But one thing that always bothered me was how hard it is to find good festival related info.
+                So I came up with an idea, that brings searching and exploring festivals into one place,
+                combined with different options to connect with other festival goers and many other cool features that you'll see below.
+            </p>
+        </section>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Tools Used</p>
-                <div class="p-small">
-                    <ul class="inside-list">
-                        <li>Nuxt</li>
-                        <li>Django + Django REST Framework</li>
-                        <li>PostgreSQL</li>
-                    </ul>
+        <section class="project-section">
+            <h2 class="section-title"><span>02</span> Stack</h2>
+            <dl class="stack">
+                <div>
+                    <dt>Core</dt>
+                    <dd class="chips"><span class="chip">Nuxt</span><span class="chip">Django + DRF</span><span class="chip">PostgreSQL</span></dd>
                 </div>
-                <div class="p-small">
-                    <h6>Styling:</h6>
-                    <ul class="inside-list">
-                        <li>Vuetify</li>
-                    </ul>
+                <div>
+                    <dt>Styling</dt>
+                    <dd class="chips"><span class="chip">Vuetify</span></dd>
                 </div>
-                <div class="p-small">
-                    <h6>Maps platform:</h6>
-                    <ul class="inside-list">
-                        <li>Mapbox</li>
-                    </ul>
+                <div>
+                    <dt>Maps platform</dt>
+                    <dd class="chips"><span class="chip">Mapbox</span></dd>
                 </div>
-                <div class="p-small">
-                    <h6>Live chat powered by:</h6>
-                    <ul class="inside-list">
-                        <li>Pusher Channels</li>
-                    </ul>
+                <div>
+                    <dt>Live chat</dt>
+                    <dd class="chips"><span class="chip">Pusher Channels</span></dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title"><span>03</span> Features</h2>
+            <ul class="features">
+                <li>Discovering and searching festivals</li>
+                <li>Selected festival info</li>
+                <li>Nearby accommodation search</li>
+                <li>Route to festival planner</li>
+                <li>Dedicated forum for each festival</li>
+                <li>Public chat rooms</li>
+                <li>Finding people with same interests and contacting them with private chats</li>
+            </ul>
+            <p class="note">
+                These functionalities provide the user with a complete solution in one place.
+                All that's left is to buy the tickets at the official seller.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title"><span>04</span> Planning</h2>
+            <p>
+                In the first stage of planning, I defined the app’s functionalities and created a use case diagram.
+            </p>
+            <figure class="diagram" data-zoomable>
+                <img src="../assets/images/project-gallery/festivals/usecasefestivals.webp" alt="Use case diagram" width="1240" height="1754" loading="lazy" decoding="async">
+                <figcaption>Use case diagram</figcaption>
+            </figure>
+
+            <figure class="diagram" data-zoomable>
+                <img src="../assets/images/project-gallery/festivals/Architecture.webp" alt="App workflow" width="751" height="404" loading="lazy" decoding="async">
+                <figcaption>App workflow</figcaption>
+            </figure>
+
+            <p>
+                The next step was to create a database that supports all the functionalities, with <b>18</b> tables in total,
+                that we can split into <b>4</b> parts based on what their goal is:
+            </p>
+            <ul class="features single">
+                <li><b>User table</b> - allows user to signup/login and also connect to other tables, so they can like, post, comment...</li>
+                <li><b>Music festival tables</b> - contain info about festivals, user favourites, genres, user favourite genres, festival genres...</li>
+                <li><b>Forum tables</b> - contain info about posts, comments and who liked them.</li>
+                <li><b>Chat tables</b> - contain chat info, chat members, messages and notifications.</li>
+            </ul>
+            <figure class="diagram" data-zoomable>
+                <img src="../assets/images/project-gallery/festivals/baza.webp" alt="Database schema" width="1418" height="1249" loading="lazy" decoding="async">
+                <figcaption>Database schema</figcaption>
+            </figure>
+        </section>
+
+        <section class="gallery-section" data-gallery>
+            <div class="gallery-heading">
+                <h2>App gallery</h2>
+                <p>Swipe, use the arrows or click to enlarge</p>
+            </div>
+
+            <div class="browser">
+                <div class="browser-bar">
+                    <div class="browser-dots"><i></i><i></i><i></i></div>
+                    <span class="browser-url"></span>
+                    <span class="gallery-counter"></span>
+                </div>
+                <div class="stage">
+                    <div class="gallery-track" tabindex="0" aria-label="App screenshots">
+                        <figure><img src="../assets/images/project-gallery/festivals/home.webp" alt="Home page" width="1918" height="1002" decoding="async"><figcaption>Home</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/searching.webp" alt="Searching festivals" width="1918" height="1002" loading="lazy" decoding="async"><figcaption>Searching festivals</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/explore_fest.webp" alt="Exploring a festival" width="1918" height="1001" loading="lazy" decoding="async"><figcaption>Exploring a festival</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/explore_fest_2.webp" alt="Festival details" width="1918" height="997" loading="lazy" decoding="async"><figcaption>Festival details</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/booking-1.webp" alt="Nearby accommodation" width="1918" height="1000" loading="lazy" decoding="async"><figcaption>Nearby accommodation</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/booking-2.webp" alt="Accommodation details" width="1918" height="998" loading="lazy" decoding="async"><figcaption>Accommodation details</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/directions.webp" alt="Route planner" width="1918" height="996" loading="lazy" decoding="async"><figcaption>Route planner</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/find-people.webp" alt="Finding people" width="1918" height="996" loading="lazy" decoding="async"><figcaption>Finding people</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/contact.webp" alt="Contacting people" width="1918" height="997" loading="lazy" decoding="async"><figcaption>Contacting people</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/public-chat.webp" alt="Public chat" width="1918" height="998" loading="lazy" decoding="async"><figcaption>Public chat</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/festival-forum-1.webp" alt="Festival forum" width="1918" height="998" loading="lazy" decoding="async"><figcaption>Festival forum</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/post-add-comment.webp" alt="Adding a comment" width="1918" height="998" loading="lazy" decoding="async"><figcaption>Adding a comment</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/post-comments-hidden-deleted.webp" alt="Hidden and deleted comments" width="1918" height="995" loading="lazy" decoding="async"><figcaption>Hidden &amp; deleted comments</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/festivals/post-comments-show.webp" alt="Comment thread" width="1918" height="997" loading="lazy" decoding="async"><figcaption>Comment thread</figcaption></figure>
+                    </div>
+                    <button class="gallery-btn" data-dir="-1" aria-label="Previous screenshot">&#x2190;</button>
+                    <button class="gallery-btn" data-dir="1" aria-label="Next screenshot">&#x2192;</button>
                 </div>
             </div>
-        </div>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Functionalities</p>
-                <p class="small-light">
-                    The app supports following functionalities:
-                </p>
-                <ul class="inside-list p-small">
-                    <li>Discovering and searching festivals</li>
-                    <li>Selected festival info</li>
-                    <li>Nearby accomodation search</li>
-                    <li>Route to festival planner</li>
-                    <li>Dedicated forum for each festival</li>
-                    <li>Public chat rooms</li>
-                    <li>Finding people with same interests and contacting them with private chats</li>
-                </ul>
-
-                <p class="small-light">
-                    This functionalities provide user with complete solution in one place.
-                    All it's left is to buy the tickets at the official seller.
-                </p>
-            </div>
-        </div>
-
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Planning</p>
-                
-                <p class="p-small">
-                    In the first stage of planning, I defined the app’s functionalities and created a use case diagram displayed below.
-                </p>
-                <img src="../assets/images/project-gallery/festivals/usecasefestivals.webp" class="diagram" width="1240" height="1754" loading="lazy" decoding="async">
-
-                <p class="p-small">
-                    App workflow:
-                </p>
-                <img src="../assets/images/project-gallery/festivals/Architecture.webp" class="diagram" width="751" height="404" loading="lazy" decoding="async">
-
-                <p class="p-small">
-                    The next step was to create database that supports all the functionalities, with <b>18</b> tables in total, that we can split into <b>4</b> parts based on what their goal is:
-                    
-                    <ul class="inside-list p-small">
-                        <li><i>User table</i> - allows user to signup/login and also connect to other tables, so they can can like, post, comment...</li>
-                        <li><i>Music festival tables</i> - contain infos about festivals, user favourites, genres, user favourite genres, festival genres... </li>
-                        <li><i>Forum tables</i> - contain infos about posts, comments and who liked them.</li>
-                        <li><i>Chat tables</i> - contain chat infos, chat members, messages and notifications.</li>
-                    </ul>
-                    <img src="../assets/images/project-gallery/festivals/baza.webp" class="diagram" width="1418" height="1249" loading="lazy" decoding="async">
-                </p>
-
-            </div>
-        </div>
-
-        <br>
-        <h6 style="font-size: 1.125rem;">App gallery</h6>
-        <div class="gallery">
-            <img src="../assets/images/project-gallery/festivals/home.webp" class="gallery-image" width="1918" height="1002" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/festivals/searching.webp" class="gallery-image" width="1918" height="1002" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/festivals/explore_fest.webp" class="gallery-image" width="1918" height="1001" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/festivals/explore_fest_2.webp" class="gallery-image" width="1918" height="997" loading="lazy" decoding="async">
-
-
-            <img src="../assets/images/project-gallery/festivals/booking-1.webp" class="gallery-image" width="1918" height="1000" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/festivals/booking-2.webp" class="gallery-image" width="1918" height="998" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/festivals/directions.webp" class="gallery-image" width="1918" height="996" loading="lazy" decoding="async">
-
-            <img src="../assets/images/project-gallery/festivals/find-people.webp" class="gallery-image" width="1918" height="996" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/festivals/contact.webp" class="gallery-image" width="1918" height="997" loading="lazy" decoding="async">
-
-            <img src="../assets/images/project-gallery/festivals/public-chat.webp" class="gallery-image" width="1918" height="998" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/festivals/festival-forum-1.webp" class="gallery-image" width="1918" height="998" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/festivals/post-add-comment.webp" class="gallery-image" width="1918" height="998" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/festivals/post-comments-hidden-deleted.webp" class="gallery-image" width="1918" height="995" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/festivals/post-comments-show.webp" class="gallery-image" width="1918" height="997" loading="lazy" decoding="async">
-        </div>
+            <div class="gallery-thumbs"></div>
+        </section>
 
     </main>
 </body>

@@ -16,70 +16,61 @@
 <body>
     <a class="back" href="./index.html"><img class="icon" src="../assets/icons/icons8-arrow-50.png" height="16" alt="Projects"></a>
 
-    <main class="flex-center height-100 column dark-linear-background gap-1-rem">
-        
-        <div class="grid-block grid-padding flex space-between">
-            <div>
-                <p><b>Sound ID</b></p>
-                <h6>*work in progress</h6>
-            </div>
-            <div class="flex contact-links">
-                <a href="https://github.com/vskarabot" target="_blank" class="contact-link flex-center">
-                    <img src="../assets/icons/github-mark-white.png" alt="github" width="16">
+    <main class="project dark-linear-background">
+
+        <header class="project-hero">
+            <p class="eyebrow">Machine learning · Work in progress</p>
+            <h1>Sound ID</h1>
+            <p class="tagline">sound id based on CNN modeling</p>
+            <div class="hero-actions">
+                <a href="https://github.com/vskarabot/sound-id" target="_blank" class="button">
+                    <img src="../assets/icons/github-mark-white.png" alt="" width="16">
+                    Source code
                 </a>
             </div>
-        </div>
+        </header>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Languages Used</p>
-                <div class="p-small">
-                    <ul class="inside-list">
-                        <li>Python</li>
-                    </ul>
+        <section class="project-section">
+            <h2 class="section-title"><span>01</span> Stack</h2>
+            <dl class="stack">
+                <div>
+                    <dt>Language</dt>
+                    <dd class="chips"><span class="chip">Python</span></dd>
                 </div>
-                <div class="p-small">
-                    <h6>ML model:</h6>
-                    <ul class="inside-list">
-                        <li>Keras MobileNetV2 (CNN)</li>
-                    </ul>
+                <div>
+                    <dt>ML model</dt>
+                    <dd class="chips"><span class="chip">Keras MobileNetV2 (CNN)</span></dd>
                 </div>
-                <div class="p-small">
-                    <h6>Data:</h6>
-                    <ul class="inside-list">
-                        <li>xeno-canto</li>
-                    </ul>
+                <div>
+                    <dt>Data</dt>
+                    <dd class="chips"><span class="chip">xeno-canto</span></dd>
                 </div>
-            </div>
-        </div>
+            </dl>
+        </section>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Project details</p>
-                <ul class="inside-list p-small">
-                    <li><b>Audio processing</b>: Extracts individual clips from larger recordings.</li>
-                    <li><b>Feature extraction</b>: Converts audio files into spectrograms for model input.</li>
-                    <li><b>Dataset management</b>Splits data into training and validation sets.</li>
-                    <li><b>Classification</b> Predicts specie from new audio clip.</li>
-                </ul>
-            </div>
-        </div>
+        <section class="project-section">
+            <h2 class="section-title"><span>02</span> Project details</h2>
+            <ul class="features">
+                <li><b>Audio processing</b>: Extracts individual clips from larger recordings.</li>
+                <li><b>Feature extraction</b>: Converts audio files into spectrograms for model input.</li>
+                <li><b>Dataset management</b>: Splits data into training and validation sets.</li>
+                <li><b>Classification</b>: Predicts species from new audio clip.</li>
+            </ul>
+        </section>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Next steps</p>
-                <p class="p-small">
-                    The immediate goal is to improve owl species classification performance by expanding the dataset and refining the training process.
-                    Planned improvements include:
-                </p>
-                <ul class="inside-list p-small">
-                    <li><b>Data expansion</b>: Collect more owl recordings to reduce overfitting.</li>
-                    <li><b>Data augmentation</b>: Apply techniques such as noise addition, pitch shifting, and time stretching to make the model more robust to real-world recordings.</li>
-                    <li><b>Generalization</b>: Once owl classification is stable, extend the model to recognize other bird species and build a more comprehensive bird sound classifier.</li>
-                </ul>
-                <p class="p-small">The end goal is to use the model to classify birds in my mobile birds app.</p>
-            </div>
-        </div>
+        <section class="project-section">
+            <h2 class="section-title"><span>03</span> Next steps</h2>
+            <p>
+                The immediate goal is to improve owl species classification performance by expanding the dataset and refining the training process.
+                Planned improvements include:
+            </p>
+            <ul class="features single">
+                <li><b>Data expansion</b>: Collect more owl recordings to reduce overfitting.</li>
+                <li><b>Data augmentation</b>: Apply techniques such as noise addition, pitch shifting, and time stretching to make the model more robust to real-world recordings.</li>
+                <li><b>Generalization</b>: Once owl classification is stable, extend the model to recognize other bird species and build a more comprehensive bird sound classifier.</li>
+            </ul>
+            <p class="note">The end goal is to use the model to classify birds in my mobile birds app.</p>
+        </section>
 
     </main>
 </body>

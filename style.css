@@ -254,7 +254,15 @@ b {
 }
 
 .grid-block:hover .card-image {
-    filter: blur(0);
+    filter: blur(0) brightness(75%);
+}
+
+.grid-block-link:has(.card-image)::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, black, transparent 80%);
+    pointer-events: none;
 }
 
 .grid-block:hover h3 {
@@ -275,21 +283,13 @@ b {
     transition: translate .1s linear;
 }
 
-.grid-block-link:not(.external) .icon {
-    rotate: 45deg;
-}
-
 .grid-block-link {
     overflow: hidden;
     position: relative;
 }
 
-.grid-block-link.external:hover .icon {
+.grid-block-link:hover .icon {
     translate: .5rem -.5rem;
-}
-
-.grid-block-link:not(.external):hover .icon {
-    translate: .5rem 0;
 }
 
 .soundbar {

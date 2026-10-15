@@ -12,73 +12,82 @@
     <link rel="stylesheet" href="projects.css">
 
     <script src="../scripts/theme-picker.js"></script>
+    <script src="../scripts/gallery.js" defer></script>
 </head>
 <body>
     <a class="back" href="./index.html"><img class="icon" src="../assets/icons/icons8-arrow-50.png" height="16" alt="Projects"></a>
 
-    <main class="flex-center height-100 column dark-linear-background gap-1-rem">
-        
-        <div class="grid-block grid-padding flex space-between">
-            <div>
-                <p><b>FPL Live</b></p>
-                <h6>Fantasy Premier League tracker</h6>
-            </div>
-            <div class="flex contact-links">
-                <a href="https://github.com/vskarabot" target="_blank" class="contact-link flex-center">
-                    <img src="../assets/icons/github-mark-white.png" alt="github" width="16">
+    <main class="project dark-linear-background">
+
+        <header class="project-hero">
+            <p class="eyebrow">Web app</p>
+            <h1>FPL Live</h1>
+            <p class="tagline">Fantasy Premier League tracker</p>
+            <div class="hero-actions">
+                <a href="https://github.com/vskarabot/fantasypl" target="_blank" class="button">
+                    <img src="../assets/icons/github-mark-white.png" alt="" width="16">
+                    Source code
                 </a>
             </div>
-        </div>
+        </header>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Short Description</p>
-                <p class="p-small">
-                    This project allows users to track their FPL team. FPL (Fantasy Premier League) is a game where 'managers' from
-                    around the world compete with each other by picking a team of Premier League football players and scoring points based on goals scored, assists etc.
-                    I wanted to simplify the proccess of checking live points of my team and teams of other players that I wanted to compare to.
-                </p> 
+        <section class="project-section">
+            <h2 class="section-title"><span>01</span> About</h2>
+            <p>
+                This project allows users to track their FPL team. FPL (Fantasy Premier League) is a game where 'managers' from
+                around the world compete with each other by picking a team of Premier League football players and scoring points based on goals scored, assists etc.
+                I wanted to simplify the process of checking live points of my team and teams of other players that I wanted to compare to.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title"><span>02</span> Stack</h2>
+            <dl class="stack">
+                <div>
+                    <dt>Core</dt>
+                    <dd class="chips"><span class="chip">Vue.js</span><span class="chip">Express.js</span></dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title"><span>03</span> Features</h2>
+            <ul class="features">
+                <li>Search team by id, or select it from predefined content creator id's</li>
+                <li>Overview of current gameweek</li>
+                <li>View league rankings with comparison on previous week</li>
+                <li>View current squad and the points it accumulated</li>
+                <li>Chart of team's progress throughout the season</li>
+            </ul>
+            <p class="note">
+                In the future I'm planning to improve the app with more statistics of footballers and their teams and maybe implement some point predictions.
+            </p>
+        </section>
+
+        <section class="gallery-section" data-gallery>
+            <div class="gallery-heading">
+                <h2>App gallery</h2>
+                <p>Swipe, use the arrows or click to enlarge</p>
             </div>
-        </div>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Tools Used</p>
-                <div class="p-small">
-                    <ul class="inside-list">
-                        <li>Vue.js</li>
-                        <li>Express.js</li>
-                    </ul>
+            <div class="browser">
+                <div class="browser-bar">
+                    <div class="browser-dots"><i></i><i></i><i></i></div>
+                    <span class="browser-url"></span>
+                    <span class="gallery-counter"></span>
+                </div>
+                <div class="stage">
+                    <div class="gallery-track" tabindex="0" aria-label="App screenshots">
+                        <figure><img src="../assets/images/project-gallery/fpl/1.webp" alt="Squad and league standings" width="1917" height="998" decoding="async"><figcaption>Squad &amp; league standings</figcaption></figure>
+                        <figure><img src="../assets/images/project-gallery/fpl/2.webp" alt="Rank progression chart" width="1918" height="997" loading="lazy" decoding="async"><figcaption>Rank progression</figcaption></figure>
+                    </div>
+                    <button class="gallery-btn" data-dir="-1" aria-label="Previous screenshot">&#x2190;</button>
+                    <button class="gallery-btn" data-dir="1" aria-label="Next screenshot">&#x2192;</button>
                 </div>
             </div>
-        </div>
 
-        <div class="grid-block grid-padding flex space-between">
-            <div class="flex column gap-1-rem">
-                <p>Functionalities</p>
-                <p class="small-light">
-                    The app allows users to:
-                </p>
-                <ul class="inside-list p-small">
-                    <li>Search team by id, or select it from predefined content creator id's</li>
-                    <li>Overview of current gameweek</li>
-                    <li>View league rankings with comparison on previous week</li>
-                    <li>View current squad and the points it accumulated.</li>
-                    <li>Chart of teams progress throughout the season</li>
-                </ul>
-
-                <p class="small-light">
-                    In the future I'm planning to improve the app with more statistics of footballers and their teams and maybe implement some point predictions.
-                </p>
-            </div>
-        </div>
-
-        <br>
-        <h6 style="font-size: 1.125rem;">App gallery</h6>
-        <div class="gallery">
-            <img src="../assets/images/project-gallery/fpl/1.webp" class="gallery-image" width="1917" height="998" loading="lazy" decoding="async">
-            <img src="../assets/images/project-gallery/fpl/2.webp" class="gallery-image" width="1918" height="997" loading="lazy" decoding="async">
-        </div>
+            <div class="gallery-thumbs"></div>
+        </section>
 
     </main>
 </body>
