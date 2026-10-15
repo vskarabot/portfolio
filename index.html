@@ -14,6 +14,7 @@
     <script src="scripts/theme-picker.js"></script>
     <script src="scripts/time.js"></script>
     <script src="scripts/clock.js"></script>
+    <script src="scripts/copy-email.js" defer></script>
 
 </head>
 <body>
@@ -30,30 +31,44 @@
                     </div>
                 </div>
             </div>
-            <div class="grid-block grid-row-span-6 grid-padding flex column">
-                
-                <div class="flex column gap-1-rem">
-                    <div>
-                        <h2>About me</h2>
-                        <p class="p-small">I'm <b>Vasja Škarabot</b>, a software developer.</p>
-                    </div>
+            <div class="grid-block grid-row-span-6 grid-padding flex column about">
 
-                    <div class="p-small">
-                        <p>I mainly work with:</p>
-                        <ul class="inside-list">
-                            <li>Flutter</li>
-                            <li>React & React Native</li>
-                            <li>Vue</li>
-                            <li>Django</li>
-                            <li>Supabase</li>
-                        </ul>
-                    </div>
-
-                    <div class="p-small">
-                        When not programming, I'm usually outside playing sports, hiking, travelling, going to concerts or listening to music. I've recently started making music myself. I enjoy finding ways to combine my interests with the things I build.
-                    </div>
-
+                <div class="flex column gap-half-rem">
+                    <h2>About me</h2>
+                    <p class="p-small">
+                        I'm a software developer who likes building apps end to end, from the database to the last pixel of the UI.
+                    </p>
                 </div>
+
+                <div class="flex column gap-half-rem p-small">
+                    <h6>I mainly work with</h6>
+                    <ul class="chips">
+                        <li class="chip">Flutter</li>
+                        <li class="chip">React & React Native</li>
+                        <li class="chip">Vue</li>
+                        <li class="chip">Django</li>
+                        <li class="chip">Supabase</li>
+                        <li class="chip">PostgreSQL</li>
+                    </ul>
+                </div>
+
+                <div class="flex column gap-half-rem p-small">
+                    <h6>Off the screen</h6>
+                    <ul class="chips">
+                        <li class="chip">Sports</li>
+                        <li class="chip">Hiking</li>
+                        <li class="chip">Travelling</li>
+                        <li class="chip">Concerts</li>
+                        <li class="chip">Making music</li>
+                    </ul>
+                    <p>I enjoy finding ways to combine my interests with the things I build.</p>
+                </div>
+
+                <dl class="about-facts p-small">
+                    <div><dt>Based in</dt><dd>Ljubljana, Slovenia</dd></div>
+                    <div><dt>Studied at</dt><dd>University of Ljubljana</dd></div>
+                    <div><dt>Now building</dt><dd><a href="projects/habitats.html">Habitats</a></dd></div>
+                </dl>
 
             </div>
             <div class="grid-block grid-row-span-4 grid-padding flex column gap-1-rem">
@@ -61,18 +76,21 @@
 
                 <div>
                     <h6><i>Contact details</i></h6>
-                    <p>skarabot.vasja@gmail.com</p>
+                    <div class="flex email-row">
+                        <a href="mailto:skarabot.vasja@gmail.com" class="underline-link">skarabot.vasja@gmail.com</a>
+                        <button type="button" class="copy-email" data-email="skarabot.vasja@gmail.com">Copy</button>
+                    </div>
                 </div>
 
                 <div>
                     <h6><i>Links</i></h6>
                     <ul class="list-no-dots">
-                        <li><a href="https://github.com/vskarabot?tab=repositories" target="_blank">Github</a></li>
+                        <li><a href="https://github.com/vskarabot?tab=repositories" target="_blank" class="underline-link">GitHub</a></li>
                     </ul>
                 </div>
             </div>
 
-            <a href="projects/index.html" class="grid-block flex grid-block-link">
+            <a href="projects/index.html" class="grid-block flex grid-block-link grid-col-span-2">
                 <div class="grid-link-content">
                     <h4>My projects</h4>
                     <img class="icon" src="assets/icons/icons8-arrow-50.png" height="16" alt="">
@@ -80,10 +98,6 @@
                 
                 <img src="assets/images/project-gallery/festivals/explore_fest.webp" class="card-image" style="object-position: center 30%;" width="1918" height="1000" decoding="async" alt="">
             </a>
-
-            <div class="grid-block grid-padding flex column">
-                <cite class="small-light"><i>Coming soon...</i></cite>
-            </div>
 
             <a href="https://vskarabot.github.io/gtavi/" target="_blank" class="grid-block flex grid-block-link">
                 <div class="grid-link-content">

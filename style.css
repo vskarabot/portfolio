@@ -99,6 +99,36 @@ reusable classes
     gap: 1rem;
 }
 
+.gap-half-rem {
+    gap: .5rem;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    list-style: none;
+}
+
+.chip {
+    padding: .25rem .75rem;
+
+    font-size: .8rem;
+    line-height: 1.5;
+    color: var(--text-strong);
+
+    border: 1px solid color-mix(in srgb, var(--theme-color) 30%, transparent);
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--theme-color) 12%, transparent);
+
+    transition: background-color .15s, border-color .15s;
+}
+
+.chip:hover {
+    border-color: color-mix(in srgb, var(--theme-color) 60%, transparent);
+    background: color-mix(in srgb, var(--theme-color) 18%, transparent);
+}
+
 .back {
     position: absolute;
     top: 1rem;
@@ -182,7 +212,77 @@ b {
 
 }
 
-.grid-block:hover {
+/* only clickable tiles light up */
+.grid-block-link:hover {
+    border-color: var(--theme-color);
+}
+
+.about {
+    gap: 1.5rem;
+}
+
+.about-facts {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+
+    display: grid;
+    gap: .4rem;
+}
+
+.about-facts div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.about-facts dt {
+    color: var(--text-muted);
+}
+
+.about-facts dd {
+    color: var(--text-strong);
+    text-align: right;
+}
+
+.about-facts a {
+    color: inherit;
+    border-bottom: 1px solid var(--theme-color);
+}
+
+.email-row {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
+}
+
+.underline-link {
+    color: var(--text-strong);
+    border-bottom: 1px solid var(--border);
+    transition: border-color .15s;
+}
+
+.underline-link:hover {
+    border-color: var(--theme-color);
+}
+
+.copy-email {
+    padding: .15rem .6rem;
+
+    font: inherit;
+    font-size: .75rem;
+    color: var(--text-muted);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: none;
+
+    cursor: pointer;
+    transition: border-color .15s, color .15s;
+}
+
+.copy-email:hover {
+    color: var(--text-strong);
     border-color: var(--theme-color);
 }
 
@@ -219,6 +319,11 @@ b {
 @media screen and (min-width: 1024px) {
     .grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* only on 4 columns, on 3 the wide tile would leave gaps */
+    .grid-col-span-2 {
+        grid-column: span 2;
     }
 }
 
