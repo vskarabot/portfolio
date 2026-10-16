@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <title>uHribe</title>
+    <link rel="icon" href="../assets/icons/v-icon.png">
+
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="projects.css">
+
+    <script src="../scripts/theme-picker.js"></script>
+    <script src="../scripts/gallery.js" defer></script>
+</head>
+<body>
+    <a class="back" href="./index.html"><img class="icon" src="../assets/icons/icons8-arrow-50.png" height="16" alt="Projects"></a>
+
+    <main class="project dark-linear-background">
+
+        <header class="project-hero">
+            <p class="eyebrow">Mobile app</p>
+            <h1>uHribe</h1>
+            <p class="tagline">explore the peaks around you and mark your visits</p>
+            <div class="hero-actions">
+                <a href="https://github.com/vskarabot/uhribe" target="_blank" class="button">
+                    <img src="../assets/icons/github-mark-white.png" alt="" width="16">
+                    Source code
+                </a>
+            </div>
+        </header>
+
+        <section class="project-section">
+            <h2 class="section-title"><span>01</span> About</h2>
+            <p>
+                uHribe is a hiking companion for Slovenian mountains.
+                It brings over 10,000 peaks into one place: browse them in a list or on a topographic map, see which routes lead to the top,
+                and mark the summits you've reached to build up your own hiking stats.
+            </p>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title"><span>02</span> Stack</h2>
+            <dl class="stack">
+                <div>
+                    <dt>Core</dt>
+                    <dd class="chips"><span class="chip">Flutter</span><span class="chip">Supabase</span></dd>
+                </div>
+                <div>
+                    <dt>Maps platform</dt>
+                    <dd class="chips"><span class="chip">Mapbox</span></dd>
+                </div>
+                <div>
+                    <dt>Data</dt>
+                    <dd class="chips"><span class="chip">Acquired from web</span></dd>
+                </div>
+            </dl>
+        </section>
+
+        <section class="project-section">
+            <h2 class="section-title"><span>03</span> Features</h2>
+            <ul class="features">
+                <li>Exploring 10,000+ peaks in Slovenia, filtered by mountain range and altitude</li>
+                <li>Topographic map with clustered peaks and quick search</li>
+                <li>Hiking routes leading to each peak</li>
+                <li>Marking your summit visits</li>
+                <li>Profile with personal hiking stats</li>
+                <li>Light and dark mode</li>
+                <li>Offline mode</li>
+            </ul>
+        </section>
+
+        <section class="gallery-section phones" data-gallery>
+            <div class="gallery-heading">
+                <div>
+                    <h2>App gallery</h2>
+                    <p>Swipe or click to enlarge</p>
+                </div>
+                <div class="gallery-nav">
+                    <button class="gallery-btn" data-dir="-1" aria-label="Previous screenshot">&#x2190;</button>
+                    <button class="gallery-btn" data-dir="1" aria-label="Next screenshot">&#x2192;</button>
+                </div>
+            </div>
+
+            <div class="gallery-track" tabindex="0" aria-label="App screenshots">
+                <figure><div class="phone"><img src="../assets/images/project-gallery/uHribe/peaks.webp" alt="List of peaks with altitude and mountain range" width="1080" height="2424" decoding="async"></div><figcaption>Peaks</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/uHribe/search-filters.webp" alt="Searching peaks filtered by mountain range and altitude" width="1080" height="2424" decoding="async"></div><figcaption>Search &amp; filters</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/uHribe/map.webp" alt="Topographic map with clustered peaks" width="1080" height="2424" decoding="async"></div><figcaption>Map</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/uHribe/map-search.webp" alt="Searching peaks on the map" width="1080" height="2424" loading="lazy" decoding="async"></div><figcaption>Map search</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/uHribe/peak-details.webp" alt="Triglav peak details on the map" width="1080" height="2424" loading="lazy" decoding="async"></div><figcaption>Peak details</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/uHribe/peak-routes.webp" alt="Hiking routes leading to Triglav" width="1080" height="2424" loading="lazy" decoding="async"></div><figcaption>Routes</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/uHribe/profile.webp" alt="Profile with hiking stats" width="1080" height="2424" loading="lazy" decoding="async"></div><figcaption>Profile</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/uHribe/settings.webp" alt="Settings with dark mode and location toggles" width="1080" height="2424" loading="lazy" decoding="async"></div><figcaption>Settings</figcaption></figure>
+                <figure><div class="phone"><img src="../assets/images/project-gallery/uHribe/dark-mode.webp" alt="Peak list in dark mode" width="1080" height="2424" loading="lazy" decoding="async"></div><figcaption>Dark mode</figcaption></figure>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
